@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "3bUWMaiHX8DVqkfuUmcWh9kvXbi5HpFeuUsJ1r4IbAE=",
+  "Source": "ReverseProxyDemo",
+  "BasePath": "_content/ReverseProxyDemo",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
