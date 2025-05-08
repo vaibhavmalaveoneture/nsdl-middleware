@@ -79,7 +79,7 @@ app.MapPost("/api/auth/login", async (
 
     var content = new StringContent(requestBody, Encoding.UTF8, "application/json");
 
-    var backendResponse = await httpClient.PostAsync("/api/auth/login", content);
+    var backendResponse = await httpClient.PostAsync("api/auth/login", content);
 
     if (!backendResponse.IsSuccessStatusCode)
     {
@@ -129,7 +129,7 @@ app.MapPost("/api/auth/send-otp", async (
 
     var content = new StringContent(requestBody, Encoding.UTF8, "application/json");
 
-    var backendResponse = await httpClient.PostAsync("/api/auth/send-otp", content);
+    var backendResponse = await httpClient.PostAsync("api/auth/send-otp", content);
 
     if (!backendResponse.IsSuccessStatusCode)
     {
@@ -179,7 +179,7 @@ app.MapPost("/api/auth/forgot-password/send-otp", async (
 
     var content = new StringContent(requestBody, Encoding.UTF8, "application/json");
 
-    var backendResponse = await httpClient.PostAsync("/api/auth/forgot-password/send-otp", content);
+    var backendResponse = await httpClient.PostAsync("api/auth/forgot-password/send-otp", content);
 
     if (!backendResponse.IsSuccessStatusCode)
     {
@@ -228,7 +228,7 @@ app.MapPost("/api/auth/resend-otp", async (
 
     var content = new StringContent(requestBody, Encoding.UTF8, "application/json");
 
-    var backendResponse = await httpClient.PostAsync("/api/auth/resend-otp", content);
+    var backendResponse = await httpClient.PostAsync("api/auth/resend-otp", content);
 
     if (!backendResponse.IsSuccessStatusCode)
     {
