@@ -224,11 +224,9 @@ app.MapPost("/api/auth/resend-otp", async (
 
     var httpClient = httpClientFactory.CreateClient("backend");
 
-    var requestBody = await new StreamReader(context.Request.Body).ReadToEndAsync();
+    var emailparameter = context.Request.Query["email"].ToString();
 
-    var content = new StringContent(requestBody, Encoding.UTF8, "application/json");
-
-    var backendResponse = await httpClient.PostAsync("api/auth/resend-otp", content);
+    var backendResponse = await httpClient.PostAsync("api/auth/resend-otp?email="+emailparameter, null);
 
     if (!backendResponse.IsSuccessStatusCode)
     {
