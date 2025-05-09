@@ -89,11 +89,16 @@ namespace NSDL.Middleware.Helpers
            </html>";*/
                 string subject = "OTP - NSDL FPI Monitor";
 
-                string purposeText = purpose == "FORGOT_PASSWORD" ? "Password Reset" :
-                      purpose == "LOGIN" ? "Login" :
-                      "Registration";
+                string purposeText = purpose switch
+                {
+                    "FORGOT_PASSWORD" => "Password Reset",
+                    "LOGIN" => "Login",
+                    _ => "Registration"
+                };
 
-                string message = $@"Your One Time Password (OTP) for {purposeText} to NSDL FPI Monitor is {otp}. This OTP is valid for 30 minutes and one login session."; 
+                string codeLabel = purposeText == "Registration" ? "verification code" : "One Time Password (OTP)";
+
+                string message = $@"Your {codeLabel} for {purposeText} to NSDL FPI Monitor is {otp}. This OTP is valid for 30 minutes and one login session."; 
                 var body =
                     $@"
             <html>
