@@ -87,18 +87,24 @@ namespace NSDL.Middleware.Helpers
                </div>
            </body>
            </html>";*/
-                string subject = "OTP - NSDL FPI Monitor";
-
-                string purposeText = purpose switch
+               /* string subject = "OTP - NSDL FPI Monitor";*/
+                string subject = purpose switch
                 {
-                    "FORGOT_PASSWORD" => "Password Reset",
-                    "LOGIN" => "Login",
-                    _ => "Registration"
+                    "FORGOT_PASSWORD" or "LOGIN" => "OTP - NSDL FPI Monitor",
+                    _ => "NSDL FPI Portal: Email Verification for User Registration",
                 };
-
-                string codeLabel = purposeText == "Registration" ? "verification code" : "One Time Password (OTP)";
-
-                string message = $@"Your {codeLabel} for {purposeText} to NSDL FPI Monitor is {otp}. This OTP is valid for 30 minutes and one login session."; 
+                string message = purpose switch
+                {
+                    "FORGOT_PASSWORD" => $@"Your One Time Password (OTP) for Password Reset to NSDL FPI Monitor is {otp}. This OTP is valid for 30 minutes and one login session.",
+                    "LOGIN" => $@"Your One Time Password (OTP) for Login to NSDL FPI Monitor is {otp}. This OTP is valid for 30 minutes and one login session.",
+                    _ => $@"<p>Welcome to the <strong>NSDL FPI Portal</strong>! (<a href=""https://www.fpi.nsdl.co.in"">www.fpi.nsdl.co.in</a>)</p>
+                            <p>Please find below the email verification code for user registration of the Common Application Form on the NSDL FPI Portal.</p>
+                            <p>Enter the following code on the portal to continue your registration process:</p>
+                            <p>Verification Code: {otp}</p>
+                            <p><strong>Email ID (as user ID):</strong> {email}</p>
+                            <p>If you have any queries or need assistance, feel free to contact us at <a href=""mailto:fpiassist@nsdl.com"">fpiassist@nsdl.com</a>.</p>"
+                };
+               
                 var body =
                     $@"
             <html>
