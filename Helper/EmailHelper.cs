@@ -38,14 +38,14 @@ namespace NSDL.Middleware.Helpers
                     UseDefaultCredentials = false,
                 };
 
-                string subject = purpose switch
+                /*string subject = purpose switch
                 {
                     "FORGOT_PASSWORD" => "Your OTP for Password Reset | NSDL",
                     "LOGIN" => "Your OTP for Login | NSDL",
                     _ => "Your OTP for User Registration | NSDL",
-                };
+                };*/
 
-                string message = purpose switch
+                /*string message = purpose switch
                 {
                     "FORGOT_PASSWORD" => $@"
                 <p>We received a request to reset your password. Please use the OTP below to proceed:</p>
@@ -59,8 +59,41 @@ namespace NSDL.Middleware.Helpers
                 <p>We have received a request to verify your registration. Please use the OTP below to complete your process:</p>
                 <p class='otp-text'>{otp}</p>
                 <p>This OTP will expire in 5 minutes. If you didn't request this, please ignore this email.</p>",
-                };
+                };*/
 
+                /*var body =
+                   $@"
+           <html>
+           <head>
+               <style>
+                   body {{ font-family: Arial, sans-serif; margin: 0; padding: 20px; }}
+                   .email-container {{ width: 100%; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #ccc; border-radius: 8px; background-color: #f9f9f9; }}
+                   .email-header {{ text-align: center; margin-bottom: 20px; }}
+                   .otp-text {{ font-size: 18px; font-weight: bold; color: #333; }}
+                   .footer {{ font-size: 12px; text-align: center; color: #888; margin-top: 20px; }}
+               </style>
+           </head>
+           <body>
+               <div class='email-container'>
+                   <div class='email-header'>
+                       <h2>NSDL - OTP Verification</h2>
+                   </div>
+                   <p>Dear User,</p>
+                   {message}
+                   <div class='footer'>
+                       <p>NSDL Team</p>
+                       <p><small>This email was sent to {email}. Please do not reply directly to this email.</small></p>
+                   </div>
+               </div>
+           </body>
+           </html>";*/
+                string subject = "OTP - NSDL FPI Monitor";
+
+                string purposeText = purpose == "FORGOT_PASSWORD" ? "Password Reset" :
+                      purpose == "LOGIN" ? "Login" :
+                      "Registration";
+
+                string message = $@"Your One Time Password (OTP) for {purposeText} to NSDL FPI Monitor is {otp}. This OTP is valid for 30 minutes and one login session."; 
                 var body =
                     $@"
             <html>
@@ -79,7 +112,14 @@ namespace NSDL.Middleware.Helpers
                         <h2>NSDL - OTP Verification</h2>
                     </div>
                     <p>Dear User,</p>
-                    {message}
+                        {message}      
+                    <div>
+                        <p>Please do not share this with anyone.</p> 
+                    </div>
+                    <div>
+                        Regards,<br>
+                        NSDL FPI Monitor.
+                    </div>
                     <div class='footer'>
                         <p>NSDL Team</p>
                         <p><small>This email was sent to {email}. Please do not reply directly to this email.</small></p>
