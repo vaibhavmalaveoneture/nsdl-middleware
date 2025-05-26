@@ -198,3 +198,40 @@
 2025-05-26 13:06:12.956 +05:30 [INF] Received HTTP/1.1 response 200.
 2025-05-26 13:06:13.531 +05:30 [INF] Executed endpoint 'route1'
 2025-05-26 13:06:13.531 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5050/api/common/me - 200 null application/json; charset=utf-8 1495.7428ms
+2025-05-26 15:39:04.907 +05:30 [INF] Config changed. Stopping the following endpoints: 'http://localhost:5050'
+2025-05-26 15:39:04.913 +05:30 [INF] Config changed. Starting the following endpoints: 'http://13.127.220.198:8001'
+2025-05-26 15:39:04.916 +05:30 [INF] Loading proxy data from config.
+2025-05-26 15:39:04.917 +05:30 [FTL] Unable to bind to 'http://13.127.220.198:8001' on config reload.
+System.Net.Sockets.SocketException (10049): The requested address is not valid in its context.
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, Boolean disconnectOnFailure, String callerName)
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.ListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.RebindAsync()
+2025-05-26 15:39:05.882 +05:30 [INF] Loading proxy data from config.
+2025-05-26 15:39:06.137 +05:30 [INF] Loading proxy data from config.
+2025-05-26 15:39:13.459 +05:30 [INF] Loading proxy data from config.
+2025-05-26 15:39:13.724 +05:30 [INF] Loading proxy data from config.
+2025-05-26 15:42:16.397 +05:30 [INF] Config changed. Stopping the following endpoints: 'http://13.127.220.198:8001'
+2025-05-26 15:42:16.404 +05:30 [INF] Config changed. Starting the following endpoints: 'http://localhost:5050'
+2025-05-26 15:42:16.405 +05:30 [INF] Loading proxy data from config.
+2025-05-26 15:42:16.660 +05:30 [INF] Loading proxy data from config.
+2025-05-26 15:42:25.250 +05:30 [INF] Config changed. Stopping the following endpoints: 'http://localhost:5050'
+2025-05-26 15:42:25.250 +05:30 [INF] Loading proxy data from config.
+2025-05-26 15:42:25.251 +05:30 [INF] Config changed. Starting the following endpoints: 'http://localhost:8001'
+2025-05-26 15:42:25.503 +05:30 [INF] Loading proxy data from config.
+2025-05-26 15:42:26.018 +05:30 [INF] Loading proxy data from config.
+2025-05-26 15:42:26.280 +05:30 [INF] Loading proxy data from config.
+2025-05-26 15:42:26.544 +05:30 [INF] Loading proxy data from config.
+2025-05-26 15:42:26.805 +05:30 [INF] Loading proxy data from config.
+2025-05-26 15:42:27.061 +05:30 [INF] Loading proxy data from config.
+2025-05-26 15:42:27.318 +05:30 [INF] Loading proxy data from config.
+2025-05-26 15:42:30.499 +05:30 [INF] Loading proxy data from config.
+2025-05-26 15:42:30.760 +05:30 [INF] Loading proxy data from config.
