@@ -1,0 +1,686 @@
+2025-05-23 12:28:16.934 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/dashboard/GetDashboardData - null null
+2025-05-23 12:28:16.965 +05:30 [INF] CORS policy execution successful.
+2025-05-23 12:28:16.966 +05:30 [INF] Executing endpoint 'route1'
+2025-05-23 12:28:16.966 +05:30 [INF] Proxying to http://localhost:3000/api/dashboard/GetDashboardData HTTP/2 RequestVersionOrLower 
+2025-05-23 12:28:17.404 +05:30 [INF] Executed endpoint 'route1'
+2025-05-23 12:28:17.404 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5050/api/dashboard/GetDashboardData - 499 null null 470.0231ms
+2025-05-23 14:36:31.070 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/dashboard/GetDashboardData - null null
+2025-05-23 14:36:31.070 +05:30 [INF] CORS policy execution successful.
+2025-05-23 14:36:31.071 +05:30 [INF] Executing endpoint 'route1'
+2025-05-23 14:36:31.071 +05:30 [INF] Proxying to http://localhost:3000/api/dashboard/GetDashboardData HTTP/2 RequestVersionOrLower 
+2025-05-23 14:36:33.600 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-05-23 14:36:33.601 +05:30 [INF] Executed endpoint 'route1'
+2025-05-23 14:36:33.601 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5050/api/dashboard/GetDashboardData - 200 null application/json; charset=utf-8 2531.3622ms
+2025-05-23 14:36:37.054 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/captcha/generate - null null
+2025-05-23 14:36:37.054 +05:30 [INF] CORS policy execution successful.
+2025-05-23 14:36:37.055 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5050/api/captcha/generate - 204 null null 0.9488ms
+2025-05-23 14:36:37.056 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5050/api/captcha/generate - application/json 2
+2025-05-23 14:36:37.059 +05:30 [INF] CORS policy execution successful.
+2025-05-23 14:36:37.059 +05:30 [INF] Executing endpoint 'route1'
+2025-05-23 14:36:37.061 +05:30 [INF] Proxying to http://localhost:3000/api/captcha/generate HTTP/2 RequestVersionOrLower 
+2025-05-23 14:36:37.366 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-05-23 14:36:37.367 +05:30 [INF] Executed endpoint 'route1'
+2025-05-23 14:36:37.367 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5050/api/captcha/generate - 200 null application/json; charset=utf-8 311.3336ms
+2025-05-23 14:43:37.009 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/captcha/generate - null null
+2025-05-23 14:43:37.010 +05:30 [INF] CORS policy execution successful.
+2025-05-23 14:43:37.010 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5050/api/captcha/generate - 204 null null 0.1782ms
+2025-05-23 14:43:37.012 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5050/api/captcha/generate - application/json 2
+2025-05-23 14:43:37.012 +05:30 [INF] CORS policy execution successful.
+2025-05-23 14:43:37.012 +05:30 [INF] Executing endpoint 'route1'
+2025-05-23 14:43:37.012 +05:30 [INF] Proxying to http://localhost:3000/api/captcha/generate HTTP/2 RequestVersionOrLower 
+2025-05-23 14:44:07.176 +05:30 [INF] Received HTTP/1.1 response 500.
+2025-05-23 14:44:07.179 +05:30 [INF] Executed endpoint 'route1'
+2025-05-23 14:44:07.179 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5050/api/captcha/generate - 500 null application/json; charset=utf-8 30167.1959ms
+2025-05-23 16:10:39.492 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/captcha/generate - null null
+2025-05-23 16:10:39.493 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:10:39.493 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5050/api/captcha/generate - 204 null null 0.9968ms
+2025-05-23 16:10:39.496 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5050/api/captcha/generate - application/json 2
+2025-05-23 16:10:39.496 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:10:39.497 +05:30 [INF] Executing endpoint 'route1'
+2025-05-23 16:10:39.497 +05:30 [INF] Proxying to http://localhost:3000/api/captcha/generate HTTP/2 RequestVersionOrLower 
+2025-05-23 16:10:42.115 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-05-23 16:10:42.116 +05:30 [INF] Executed endpoint 'route1'
+2025-05-23 16:10:42.116 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5050/api/captcha/generate - 200 null application/json; charset=utf-8 2620.3145ms
+2025-05-23 16:36:17.879 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/captcha/generate - null null
+2025-05-23 16:36:17.880 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:36:17.880 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5050/api/captcha/generate - 204 null null 0.2247ms
+2025-05-23 16:36:17.881 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5050/api/captcha/generate - application/json 2
+2025-05-23 16:36:17.881 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:36:17.881 +05:30 [INF] Executing endpoint 'route1'
+2025-05-23 16:36:17.881 +05:30 [INF] Proxying to http://localhost:3000/api/captcha/generate HTTP/2 RequestVersionOrLower 
+2025-05-23 16:36:18.439 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-05-23 16:36:18.439 +05:30 [INF] Executed endpoint 'route1'
+2025-05-23 16:36:18.439 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5050/api/captcha/generate - 200 null application/json; charset=utf-8 558.699ms
+2025-05-23 16:36:25.075 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/captcha/generate - null null
+2025-05-23 16:36:25.075 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:36:25.075 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5050/api/captcha/generate - 204 null null 0.8349ms
+2025-05-23 16:36:25.076 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5050/api/captcha/generate - application/json 2
+2025-05-23 16:36:25.076 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:36:25.076 +05:30 [INF] Executing endpoint 'route1'
+2025-05-23 16:36:25.077 +05:30 [INF] Proxying to http://localhost:3000/api/captcha/generate HTTP/2 RequestVersionOrLower 
+2025-05-23 16:36:25.420 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-05-23 16:36:25.420 +05:30 [INF] Executed endpoint 'route1'
+2025-05-23 16:36:25.420 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5050/api/captcha/generate - 200 null application/json; charset=utf-8 343.5541ms
+2025-05-23 16:36:30.569 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/auth/check-active-session - null null
+2025-05-23 16:36:30.569 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:36:30.570 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5050/api/auth/check-active-session - 204 null null 1.2746ms
+2025-05-23 16:36:30.571 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5050/api/auth/check-active-session - application/json 157
+2025-05-23 16:36:30.571 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:36:30.571 +05:30 [INF] Executing endpoint 'route1'
+2025-05-23 16:36:30.571 +05:30 [INF] Proxying to http://localhost:3000/api/auth/check-active-session HTTP/2 RequestVersionOrLower 
+2025-05-23 16:36:30.885 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-05-23 16:36:30.885 +05:30 [INF] Executed endpoint 'route1'
+2025-05-23 16:36:30.886 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5050/api/auth/check-active-session - 200 null application/json; charset=utf-8 314.899ms
+2025-05-23 16:36:30.890 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/auth/login - null null
+2025-05-23 16:36:30.890 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:36:30.890 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5050/api/auth/login - 204 null null 0.322ms
+2025-05-23 16:36:30.891 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5050/api/auth/login - application/json 157
+2025-05-23 16:36:30.892 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:36:30.892 +05:30 [INF] Executing endpoint 'HTTP: POST /api/auth/login'
+2025-05-23 16:36:30.896 +05:30 [INF] Start processing HTTP request POST http://localhost:3000/api/auth/login
+2025-05-23 16:36:30.896 +05:30 [INF] Sending HTTP request POST http://localhost:3000/api/auth/login
+2025-05-23 16:36:32.157 +05:30 [INF] Received HTTP response headers after 1260.9764ms - 200
+2025-05-23 16:36:32.157 +05:30 [INF] End processing HTTP request after 1261.2628ms - 200
+2025-05-23 16:36:32.201 +05:30 [INF] Setting HTTP status code 200.
+2025-05-23 16:36:32.201 +05:30 [INF] Writing value of type 'MiddlewareResponse' as Json.
+2025-05-23 16:36:32.201 +05:30 [INF] Executed endpoint 'HTTP: POST /api/auth/login'
+2025-05-23 16:36:32.202 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5050/api/auth/login - 200 null application/json; charset=utf-8 1310.1114ms
+2025-05-23 16:36:33.132 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/common/me - null null
+2025-05-23 16:36:33.132 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:36:33.132 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5050/api/common/me - 204 null null 0.1612ms
+2025-05-23 16:36:33.134 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/common/me - null null
+2025-05-23 16:36:33.134 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:36:33.134 +05:30 [INF] Executing endpoint 'route1'
+2025-05-23 16:36:33.134 +05:30 [INF] Proxying to http://localhost:3000/api/common/me HTTP/2 RequestVersionOrLower 
+2025-05-23 16:36:34.067 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-05-23 16:36:34.625 +05:30 [INF] Executed endpoint 'route1'
+2025-05-23 16:36:34.625 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5050/api/common/me - 200 null application/json; charset=utf-8 1491.0658ms
+2025-05-23 16:36:34.628 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/auth/user-permissions - null null
+2025-05-23 16:36:34.628 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:36:34.628 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5050/api/auth/user-permissions - 204 null null 0.1992ms
+2025-05-23 16:36:34.629 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/auth/user-permissions - null null
+2025-05-23 16:36:34.630 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:36:34.630 +05:30 [INF] Executing endpoint 'route1'
+2025-05-23 16:36:34.630 +05:30 [INF] Proxying to http://localhost:3000/api/auth/user-permissions HTTP/2 RequestVersionOrLower 
+2025-05-23 16:36:35.620 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-05-23 16:36:35.699 +05:30 [INF] Executed endpoint 'route1'
+2025-05-23 16:36:35.700 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5050/api/auth/user-permissions - 200 null application/json; charset=utf-8 1070.0951ms
+2025-05-23 16:36:35.708 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/common/me - null null
+2025-05-23 16:36:35.709 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:36:35.709 +05:30 [INF] Executing endpoint 'route1'
+2025-05-23 16:36:35.709 +05:30 [INF] Proxying to http://localhost:3000/api/common/me HTTP/2 RequestVersionOrLower 
+2025-05-23 16:36:36.587 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-05-23 16:36:37.145 +05:30 [INF] Executed endpoint 'route1'
+2025-05-23 16:36:37.145 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5050/api/common/me - 200 null application/json; charset=utf-8 1436.6121ms
+2025-05-23 16:36:37.152 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/auth/user-permissions - null null
+2025-05-23 16:36:37.152 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:36:37.152 +05:30 [INF] Executing endpoint 'route1'
+2025-05-23 16:36:37.152 +05:30 [INF] Proxying to http://localhost:3000/api/auth/user-permissions HTTP/2 RequestVersionOrLower 
+2025-05-23 16:36:38.102 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-05-23 16:36:38.151 +05:30 [INF] Executed endpoint 'route1'
+2025-05-23 16:36:38.152 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5050/api/auth/user-permissions - 200 null application/json; charset=utf-8 1000.1324ms
+2025-05-23 16:36:38.156 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/common/me - null null
+2025-05-23 16:36:38.156 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:36:38.156 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5050/api/common/me - 204 null null 0.5918ms
+2025-05-23 16:36:38.158 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/common/me - null null
+2025-05-23 16:36:38.158 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:36:38.158 +05:30 [INF] Executing endpoint 'route1'
+2025-05-23 16:36:38.158 +05:30 [INF] Proxying to http://localhost:3000/api/common/me HTTP/2 RequestVersionOrLower 
+2025-05-23 16:36:38.966 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-05-23 16:36:39.524 +05:30 [INF] Executed endpoint 'route1'
+2025-05-23 16:36:39.524 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5050/api/common/me - 200 null application/json; charset=utf-8 1366.1912ms
+2025-05-23 16:36:39.532 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/auth/user-permissions - null null
+2025-05-23 16:36:39.532 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:36:39.532 +05:30 [INF] Executing endpoint 'route1'
+2025-05-23 16:36:39.532 +05:30 [INF] Proxying to http://localhost:3000/api/auth/user-permissions HTTP/2 RequestVersionOrLower 
+2025-05-23 16:36:40.902 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-05-23 16:36:40.957 +05:30 [INF] Executed endpoint 'route1'
+2025-05-23 16:36:40.957 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5050/api/auth/user-permissions - 200 null application/json; charset=utf-8 1425.2041ms
+2025-05-23 16:36:40.988 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/common/me - null null
+2025-05-23 16:36:40.989 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:36:40.989 +05:30 [INF] Executing endpoint 'route1'
+2025-05-23 16:36:40.989 +05:30 [INF] Proxying to http://localhost:3000/api/common/me HTTP/2 RequestVersionOrLower 
+2025-05-23 16:36:40.990 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/auth/user-permissions - null null
+2025-05-23 16:36:40.990 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:36:40.991 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5050/api/auth/user-permissions - 204 null null 0.2351ms
+2025-05-23 16:36:40.992 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/auth/user-permissions - null null
+2025-05-23 16:36:40.992 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:36:40.992 +05:30 [INF] Executing endpoint 'route1'
+2025-05-23 16:36:40.992 +05:30 [INF] Proxying to http://localhost:3000/api/auth/user-permissions HTTP/2 RequestVersionOrLower 
+2025-05-23 16:36:41.754 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-05-23 16:36:41.757 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/common/me - null null
+2025-05-23 16:36:41.757 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:36:41.757 +05:30 [INF] Executing endpoint 'route1'
+2025-05-23 16:36:41.757 +05:30 [INF] Proxying to http://localhost:3000/api/common/me HTTP/2 RequestVersionOrLower 
+2025-05-23 16:36:42.286 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-05-23 16:36:42.307 +05:30 [INF] Executed endpoint 'route1'
+2025-05-23 16:36:42.307 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5050/api/common/me - 200 null application/json; charset=utf-8 1318.3748ms
+2025-05-23 16:36:42.313 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/fvciapplication/GetApplicationListAsync - null null
+2025-05-23 16:36:42.313 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:36:42.313 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5050/api/fvciapplication/GetApplicationListAsync - 204 null null 0.2765ms
+2025-05-23 16:36:42.316 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/auth/user-permissions - null null
+2025-05-23 16:36:42.316 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:36:42.316 +05:30 [INF] Executing endpoint 'route1'
+2025-05-23 16:36:42.316 +05:30 [INF] Proxying to http://localhost:3000/api/auth/user-permissions HTTP/2 RequestVersionOrLower 
+2025-05-23 16:36:42.317 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/fvciapplication/GetApplicationListAsync - null null
+2025-05-23 16:36:42.317 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:36:42.317 +05:30 [INF] Executing endpoint 'route1'
+2025-05-23 16:36:42.317 +05:30 [INF] Proxying to http://localhost:3000/api/fvciapplication/GetApplicationListAsync HTTP/2 RequestVersionOrLower 
+2025-05-23 16:36:42.378 +05:30 [INF] Executed endpoint 'route1'
+2025-05-23 16:36:42.378 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5050/api/auth/user-permissions - 200 null application/json; charset=utf-8 1386.5173ms
+2025-05-23 16:36:42.790 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-05-23 16:36:43.224 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-05-23 16:36:43.299 +05:30 [INF] Executed endpoint 'route1'
+2025-05-23 16:36:43.300 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5050/api/auth/user-permissions - 200 null application/json; charset=utf-8 983.8974ms
+2025-05-23 16:36:43.336 +05:30 [INF] Executed endpoint 'route1'
+2025-05-23 16:36:43.336 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5050/api/common/me - 200 null application/json; charset=utf-8 1579.468ms
+2025-05-23 16:36:43.904 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-05-23 16:36:44.021 +05:30 [INF] Executed endpoint 'route1'
+2025-05-23 16:36:44.021 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5050/api/fvciapplication/GetApplicationListAsync - 200 null application/json; charset=utf-8 1704.8213ms
+2025-05-23 16:36:54.125 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/common/me - null null
+2025-05-23 16:36:54.125 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:36:54.125 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5050/api/common/me - 204 null null 0.1746ms
+2025-05-23 16:36:54.128 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/common/me - null null
+2025-05-23 16:36:54.128 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:36:54.128 +05:30 [INF] Executing endpoint 'route1'
+2025-05-23 16:36:54.128 +05:30 [INF] Proxying to http://localhost:3000/api/common/me HTTP/2 RequestVersionOrLower 
+2025-05-23 16:36:55.074 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-05-23 16:36:55.630 +05:30 [INF] Executed endpoint 'route1'
+2025-05-23 16:36:55.630 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5050/api/common/me - 200 null application/json; charset=utf-8 1502.4398ms
+2025-05-23 16:36:55.634 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/auth/user-permissions - null null
+2025-05-23 16:36:55.634 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:36:55.658 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5050/api/auth/user-permissions - 204 null null 24.3084ms
+2025-05-23 16:36:55.660 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/auth/user-permissions - null null
+2025-05-23 16:36:55.660 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:36:55.660 +05:30 [INF] Executing endpoint 'route1'
+2025-05-23 16:36:55.660 +05:30 [INF] Proxying to http://localhost:3000/api/auth/user-permissions HTTP/2 RequestVersionOrLower 
+2025-05-23 16:36:56.602 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-05-23 16:36:56.726 +05:30 [INF] Executed endpoint 'route1'
+2025-05-23 16:36:56.730 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5050/api/auth/user-permissions - 200 null application/json; charset=utf-8 1070.2569ms
+2025-05-23 16:36:56.738 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/common/me - null null
+2025-05-23 16:36:56.738 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:36:56.738 +05:30 [INF] Executing endpoint 'route1'
+2025-05-23 16:36:56.738 +05:30 [INF] Proxying to http://localhost:3000/api/common/me HTTP/2 RequestVersionOrLower 
+2025-05-23 16:36:57.604 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-05-23 16:36:58.265 +05:30 [INF] Executed endpoint 'route1'
+2025-05-23 16:36:58.266 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5050/api/common/me - 200 null application/json; charset=utf-8 1527.8948ms
+2025-05-23 16:36:58.273 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/auth/user-permissions - null null
+2025-05-23 16:36:58.273 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:36:58.273 +05:30 [INF] Executing endpoint 'route1'
+2025-05-23 16:36:58.273 +05:30 [INF] Proxying to http://localhost:3000/api/auth/user-permissions HTTP/2 RequestVersionOrLower 
+2025-05-23 16:36:59.456 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-05-23 16:36:59.511 +05:30 [INF] Executed endpoint 'route1'
+2025-05-23 16:36:59.511 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5050/api/auth/user-permissions - 200 null application/json; charset=utf-8 1238.5751ms
+2025-05-23 16:36:59.555 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/common/me - null null
+2025-05-23 16:36:59.555 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:36:59.555 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5050/api/common/me - 204 null null 0.2262ms
+2025-05-23 16:36:59.557 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/common/me - null null
+2025-05-23 16:36:59.557 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:36:59.557 +05:30 [INF] Executing endpoint 'route1'
+2025-05-23 16:36:59.557 +05:30 [INF] Proxying to http://localhost:3000/api/common/me HTTP/2 RequestVersionOrLower 
+2025-05-23 16:36:59.593 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/auth/user-permissions - null null
+2025-05-23 16:36:59.593 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:36:59.593 +05:30 [INF] Executing endpoint 'route1'
+2025-05-23 16:36:59.593 +05:30 [INF] Proxying to http://localhost:3000/api/auth/user-permissions HTTP/2 RequestVersionOrLower 
+2025-05-23 16:37:00.358 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-05-23 16:37:00.360 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/common/me - null null
+2025-05-23 16:37:00.360 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:37:00.360 +05:30 [INF] Executing endpoint 'route1'
+2025-05-23 16:37:00.360 +05:30 [INF] Proxying to http://localhost:3000/api/common/me HTTP/2 RequestVersionOrLower 
+2025-05-23 16:37:00.546 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-05-23 16:37:00.593 +05:30 [INF] Executed endpoint 'route1'
+2025-05-23 16:37:00.597 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5050/api/auth/user-permissions - 200 null application/json; charset=utf-8 1004.0944ms
+2025-05-23 16:37:01.153 +05:30 [INF] Executed endpoint 'route1'
+2025-05-23 16:37:01.153 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5050/api/common/me - 200 null application/json; charset=utf-8 1596.2081ms
+2025-05-23 16:37:01.159 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/fvciapplication/GetApplicationListAsync - null null
+2025-05-23 16:37:01.159 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:37:01.159 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5050/api/fvciapplication/GetApplicationListAsync - 204 null null 0.289ms
+2025-05-23 16:37:01.162 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/fvciapplication/GetApplicationListAsync - null null
+2025-05-23 16:37:01.162 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:37:01.162 +05:30 [INF] Executing endpoint 'route1'
+2025-05-23 16:37:01.163 +05:30 [INF] Proxying to http://localhost:3000/api/fvciapplication/GetApplicationListAsync HTTP/2 RequestVersionOrLower 
+2025-05-23 16:37:01.163 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/auth/user-permissions - null null
+2025-05-23 16:37:01.163 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:37:01.187 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5050/api/auth/user-permissions - 204 null null 23.9607ms
+2025-05-23 16:37:01.189 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/auth/user-permissions - null null
+2025-05-23 16:37:01.189 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:37:01.189 +05:30 [INF] Executing endpoint 'route1'
+2025-05-23 16:37:01.189 +05:30 [INF] Proxying to http://localhost:3000/api/auth/user-permissions HTTP/2 RequestVersionOrLower 
+2025-05-23 16:37:01.358 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-05-23 16:37:01.966 +05:30 [INF] Executed endpoint 'route1'
+2025-05-23 16:37:01.967 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5050/api/common/me - 200 null application/json; charset=utf-8 1606.613ms
+2025-05-23 16:37:02.198 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-05-23 16:37:02.246 +05:30 [INF] Executed endpoint 'route1'
+2025-05-23 16:37:02.246 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5050/api/auth/user-permissions - 200 null application/json; charset=utf-8 1057.2089ms
+2025-05-23 16:37:02.719 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-05-23 16:37:02.807 +05:30 [INF] Executed endpoint 'route1'
+2025-05-23 16:37:02.807 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5050/api/fvciapplication/GetApplicationListAsync - 200 null application/json; charset=utf-8 1645.7651ms
+2025-05-23 16:40:35.800 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/common/me - null null
+2025-05-23 16:40:35.800 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:40:35.800 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5050/api/common/me - 204 null null 0.2858ms
+2025-05-23 16:40:35.802 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/common/me - null null
+2025-05-23 16:40:35.802 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:40:35.802 +05:30 [INF] Executing endpoint 'route1'
+2025-05-23 16:40:35.802 +05:30 [INF] Proxying to http://localhost:3000/api/common/me HTTP/2 RequestVersionOrLower 
+2025-05-23 16:40:36.696 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-05-23 16:40:37.279 +05:30 [INF] Executed endpoint 'route1'
+2025-05-23 16:40:37.279 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5050/api/common/me - 200 null application/json; charset=utf-8 1476.8698ms
+2025-05-23 16:40:37.284 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/auth/user-permissions - null null
+2025-05-23 16:40:37.284 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:40:37.284 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5050/api/auth/user-permissions - 204 null null 0.1967ms
+2025-05-23 16:40:37.285 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/auth/user-permissions - null null
+2025-05-23 16:40:37.286 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:40:37.286 +05:30 [INF] Executing endpoint 'route1'
+2025-05-23 16:40:37.286 +05:30 [INF] Proxying to http://localhost:3000/api/auth/user-permissions HTTP/2 RequestVersionOrLower 
+2025-05-23 16:40:38.190 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-05-23 16:40:38.258 +05:30 [INF] Executed endpoint 'route1'
+2025-05-23 16:40:38.259 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5050/api/auth/user-permissions - 200 null application/json; charset=utf-8 973.1699ms
+2025-05-23 16:40:38.262 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/common/me - null null
+2025-05-23 16:40:38.262 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:40:38.262 +05:30 [INF] Executing endpoint 'route1'
+2025-05-23 16:40:38.263 +05:30 [INF] Proxying to http://localhost:3000/api/common/me HTTP/2 RequestVersionOrLower 
+2025-05-23 16:40:39.063 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-05-23 16:40:39.713 +05:30 [INF] Executed endpoint 'route1'
+2025-05-23 16:40:39.715 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5050/api/common/me - 200 null application/json; charset=utf-8 1452.1516ms
+2025-05-23 16:40:39.725 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/auth/user-permissions - null null
+2025-05-23 16:40:39.726 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:40:39.726 +05:30 [INF] Executing endpoint 'route1'
+2025-05-23 16:40:39.726 +05:30 [INF] Proxying to http://localhost:3000/api/auth/user-permissions HTTP/2 RequestVersionOrLower 
+2025-05-23 16:40:40.809 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-05-23 16:40:40.853 +05:30 [INF] Executed endpoint 'route1'
+2025-05-23 16:40:40.853 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5050/api/auth/user-permissions - 200 null application/json; charset=utf-8 1128.1499ms
+2025-05-23 16:40:40.903 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/common/me - null null
+2025-05-23 16:40:40.903 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:40:40.903 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5050/api/common/me - 204 null null 0.2446ms
+2025-05-23 16:40:40.904 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/common/me - null null
+2025-05-23 16:40:40.904 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:40:40.904 +05:30 [INF] Executing endpoint 'route1'
+2025-05-23 16:40:40.904 +05:30 [INF] Proxying to http://localhost:3000/api/common/me HTTP/2 RequestVersionOrLower 
+2025-05-23 16:40:40.911 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/auth/user-permissions - null null
+2025-05-23 16:40:40.911 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:40:40.911 +05:30 [INF] Executing endpoint 'route1'
+2025-05-23 16:40:40.911 +05:30 [INF] Proxying to http://localhost:3000/api/auth/user-permissions HTTP/2 RequestVersionOrLower 
+2025-05-23 16:40:41.711 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-05-23 16:40:41.715 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/common/me - null null
+2025-05-23 16:40:41.715 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:40:41.715 +05:30 [INF] Executing endpoint 'route1'
+2025-05-23 16:40:41.715 +05:30 [INF] Proxying to http://localhost:3000/api/common/me HTTP/2 RequestVersionOrLower 
+2025-05-23 16:40:41.818 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-05-23 16:40:41.868 +05:30 [INF] Executed endpoint 'route1'
+2025-05-23 16:40:41.868 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5050/api/auth/user-permissions - 200 null application/json; charset=utf-8 956.938ms
+2025-05-23 16:40:42.260 +05:30 [INF] Executed endpoint 'route1'
+2025-05-23 16:40:42.260 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5050/api/common/me - 200 null application/json; charset=utf-8 1355.6354ms
+2025-05-23 16:40:42.266 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/fvciapplication/GetApplicationListAsync - null null
+2025-05-23 16:40:42.266 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:40:42.267 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5050/api/fvciapplication/GetApplicationListAsync - 204 null null 0.9137ms
+2025-05-23 16:40:42.269 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/fvciapplication/GetApplicationListAsync - null null
+2025-05-23 16:40:42.269 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:40:42.269 +05:30 [INF] Executing endpoint 'route1'
+2025-05-23 16:40:42.269 +05:30 [INF] Proxying to http://localhost:3000/api/fvciapplication/GetApplicationListAsync HTTP/2 RequestVersionOrLower 
+2025-05-23 16:40:42.270 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/auth/user-permissions - null null
+2025-05-23 16:40:42.270 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:40:42.270 +05:30 [INF] Executing endpoint 'route1'
+2025-05-23 16:40:42.270 +05:30 [INF] Proxying to http://localhost:3000/api/auth/user-permissions HTTP/2 RequestVersionOrLower 
+2025-05-23 16:40:42.494 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-05-23 16:40:43.071 +05:30 [INF] Executed endpoint 'route1'
+2025-05-23 16:40:43.071 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5050/api/common/me - 200 null application/json; charset=utf-8 1355.993ms
+2025-05-23 16:40:43.182 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-05-23 16:40:43.248 +05:30 [INF] Executed endpoint 'route1'
+2025-05-23 16:40:43.248 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5050/api/auth/user-permissions - 200 null application/json; charset=utf-8 977.9132ms
+2025-05-23 16:40:43.493 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-05-23 16:40:43.626 +05:30 [INF] Executed endpoint 'route1'
+2025-05-23 16:40:43.626 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5050/api/fvciapplication/GetApplicationListAsync - 200 null application/json; charset=utf-8 1356.9438ms
+2025-05-23 16:47:37.780 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/common/me - null null
+2025-05-23 16:47:37.780 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:47:37.780 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5050/api/common/me - 204 null null 0.2453ms
+2025-05-23 16:47:37.782 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/common/me - null null
+2025-05-23 16:47:37.782 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:47:37.782 +05:30 [INF] Executing endpoint 'route1'
+2025-05-23 16:47:37.782 +05:30 [INF] Proxying to http://localhost:3000/api/common/me HTTP/2 RequestVersionOrLower 
+2025-05-23 16:47:39.165 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-05-23 16:47:39.739 +05:30 [INF] Executed endpoint 'route1'
+2025-05-23 16:47:39.739 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5050/api/common/me - 200 null application/json; charset=utf-8 1956.7554ms
+2025-05-23 16:47:39.744 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/auth/user-permissions - null null
+2025-05-23 16:47:39.744 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:47:39.745 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5050/api/auth/user-permissions - 204 null null 1.011ms
+2025-05-23 16:47:39.746 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/auth/user-permissions - null null
+2025-05-23 16:47:39.746 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:47:39.747 +05:30 [INF] Executing endpoint 'route1'
+2025-05-23 16:47:39.747 +05:30 [INF] Proxying to http://localhost:3000/api/auth/user-permissions HTTP/2 RequestVersionOrLower 
+2025-05-23 16:47:40.712 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-05-23 16:47:40.787 +05:30 [INF] Executed endpoint 'route1'
+2025-05-23 16:47:40.787 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5050/api/auth/user-permissions - 200 null application/json; charset=utf-8 1040.9177ms
+2025-05-23 16:47:40.791 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/common/me - null null
+2025-05-23 16:47:40.791 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:47:40.791 +05:30 [INF] Executing endpoint 'route1'
+2025-05-23 16:47:40.791 +05:30 [INF] Proxying to http://localhost:3000/api/common/me HTTP/2 RequestVersionOrLower 
+2025-05-23 16:47:41.467 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-05-23 16:47:42.043 +05:30 [INF] Executed endpoint 'route1'
+2025-05-23 16:47:42.043 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5050/api/common/me - 200 null application/json; charset=utf-8 1251.8573ms
+2025-05-23 16:47:42.047 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/auth/user-permissions - null null
+2025-05-23 16:47:42.048 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:47:42.048 +05:30 [INF] Executing endpoint 'route1'
+2025-05-23 16:47:42.048 +05:30 [INF] Proxying to http://localhost:3000/api/auth/user-permissions HTTP/2 RequestVersionOrLower 
+2025-05-23 16:47:42.981 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-05-23 16:47:43.059 +05:30 [INF] Executed endpoint 'route1'
+2025-05-23 16:47:43.060 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5050/api/auth/user-permissions - 200 null application/json; charset=utf-8 1012.0153ms
+2025-05-23 16:47:43.109 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/common/me - null null
+2025-05-23 16:47:43.109 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:47:43.109 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5050/api/common/me - 204 null null 0.166ms
+2025-05-23 16:47:43.110 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/common/me - null null
+2025-05-23 16:47:43.110 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:47:43.111 +05:30 [INF] Executing endpoint 'route1'
+2025-05-23 16:47:43.111 +05:30 [INF] Proxying to http://localhost:3000/api/common/me HTTP/2 RequestVersionOrLower 
+2025-05-23 16:47:43.120 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/auth/user-permissions - null null
+2025-05-23 16:47:43.120 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:47:43.120 +05:30 [INF] Executing endpoint 'route1'
+2025-05-23 16:47:43.120 +05:30 [INF] Proxying to http://localhost:3000/api/auth/user-permissions HTTP/2 RequestVersionOrLower 
+2025-05-23 16:47:43.932 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-05-23 16:47:43.935 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/common/me - null null
+2025-05-23 16:47:43.935 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:47:43.935 +05:30 [INF] Executing endpoint 'route1'
+2025-05-23 16:47:43.935 +05:30 [INF] Proxying to http://localhost:3000/api/common/me HTTP/2 RequestVersionOrLower 
+2025-05-23 16:47:44.162 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-05-23 16:47:44.202 +05:30 [INF] Executed endpoint 'route1'
+2025-05-23 16:47:44.202 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5050/api/auth/user-permissions - 200 null application/json; charset=utf-8 1082.542ms
+2025-05-23 16:47:44.507 +05:30 [INF] Executed endpoint 'route1'
+2025-05-23 16:47:44.507 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5050/api/common/me - 200 null application/json; charset=utf-8 1396.7119ms
+2025-05-23 16:47:44.518 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/fvciapplication/GetApplicationListAsync - null null
+2025-05-23 16:47:44.518 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:47:44.518 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5050/api/fvciapplication/GetApplicationListAsync - 204 null null 0.3755ms
+2025-05-23 16:47:44.520 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/fvciapplication/GetApplicationListAsync - null null
+2025-05-23 16:47:44.521 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:47:44.521 +05:30 [INF] Executing endpoint 'route1'
+2025-05-23 16:47:44.521 +05:30 [INF] Proxying to http://localhost:3000/api/fvciapplication/GetApplicationListAsync HTTP/2 RequestVersionOrLower 
+2025-05-23 16:47:44.528 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/auth/user-permissions - null null
+2025-05-23 16:47:44.529 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:47:44.529 +05:30 [INF] Executing endpoint 'route1'
+2025-05-23 16:47:44.529 +05:30 [INF] Proxying to http://localhost:3000/api/auth/user-permissions HTTP/2 RequestVersionOrLower 
+2025-05-23 16:47:44.793 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-05-23 16:47:45.338 +05:30 [INF] Executed endpoint 'route1'
+2025-05-23 16:47:45.338 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5050/api/common/me - 200 null application/json; charset=utf-8 1403.4996ms
+2025-05-23 16:47:45.468 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-05-23 16:47:45.521 +05:30 [INF] Executed endpoint 'route1'
+2025-05-23 16:47:45.521 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5050/api/auth/user-permissions - 200 null application/json; charset=utf-8 992.2865ms
+2025-05-23 16:47:45.552 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-05-23 16:47:45.628 +05:30 [INF] Executed endpoint 'route1'
+2025-05-23 16:47:45.628 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5050/api/fvciapplication/GetApplicationListAsync - 200 null application/json; charset=utf-8 1107.7422ms
+2025-05-23 16:49:34.568 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/auth/logout - null null
+2025-05-23 16:49:34.568 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:49:34.568 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5050/api/auth/logout - 204 null null 0.4012ms
+2025-05-23 16:49:34.569 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5050/api/auth/logout - null 0
+2025-05-23 16:49:34.569 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:49:34.569 +05:30 [INF] Executing endpoint 'route1'
+2025-05-23 16:49:34.569 +05:30 [INF] Proxying to http://localhost:3000/api/auth/logout HTTP/2 RequestVersionOrLower 
+2025-05-23 16:49:35.958 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-05-23 16:49:37.729 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5050/api/auth/logout - null 0
+2025-05-23 16:49:37.730 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:49:37.730 +05:30 [INF] Executing endpoint 'route1'
+2025-05-23 16:49:37.730 +05:30 [INF] Proxying to http://localhost:3000/api/auth/logout HTTP/2 RequestVersionOrLower 
+2025-05-23 16:49:39.914 +05:30 [INF] Executed endpoint 'route1'
+2025-05-23 16:49:39.914 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5050/api/auth/logout - 200 null application/json; charset=utf-8 5345.1749ms
+2025-05-23 16:49:40.034 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/captcha/generate - null null
+2025-05-23 16:49:40.034 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:49:40.034 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5050/api/captcha/generate - 204 null null 0.1833ms
+2025-05-23 16:49:40.035 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5050/api/captcha/generate - application/json 2
+2025-05-23 16:49:40.035 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:49:40.035 +05:30 [INF] Executing endpoint 'route1'
+2025-05-23 16:49:40.035 +05:30 [INF] Proxying to http://localhost:3000/api/captcha/generate HTTP/2 RequestVersionOrLower 
+2025-05-23 16:49:40.324 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-05-23 16:49:40.324 +05:30 [INF] Executed endpoint 'route1'
+2025-05-23 16:49:40.324 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5050/api/captcha/generate - 200 null application/json; charset=utf-8 289.1494ms
+2025-05-23 16:49:41.034 +05:30 [INF] Received HTTP/1.1 response 401.
+2025-05-23 16:49:41.117 +05:30 [INF] Executed endpoint 'route1'
+2025-05-23 16:49:41.117 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5050/api/auth/logout - 401 null application/json; charset=utf-8 3387.7729ms
+2025-05-23 16:50:56.550 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/auth/check-active-session - null null
+2025-05-23 16:50:56.550 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:50:56.550 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5050/api/auth/check-active-session - 204 null null 0.2785ms
+2025-05-23 16:50:56.551 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5050/api/auth/check-active-session - application/json 157
+2025-05-23 16:50:56.552 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:50:56.552 +05:30 [INF] Executing endpoint 'route1'
+2025-05-23 16:50:56.552 +05:30 [INF] Proxying to http://localhost:3000/api/auth/check-active-session HTTP/2 RequestVersionOrLower 
+2025-05-23 16:50:57.350 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-05-23 16:50:57.535 +05:30 [INF] Executed endpoint 'route1'
+2025-05-23 16:50:57.535 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5050/api/auth/check-active-session - 200 null application/json; charset=utf-8 983.4286ms
+2025-05-23 16:50:57.542 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/auth/login - null null
+2025-05-23 16:50:57.542 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:50:57.542 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5050/api/auth/login - 204 null null 0.3215ms
+2025-05-23 16:50:57.544 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5050/api/auth/login - application/json 157
+2025-05-23 16:50:57.544 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:50:57.545 +05:30 [INF] Executing endpoint 'HTTP: POST /api/auth/login'
+2025-05-23 16:50:57.545 +05:30 [INF] Start processing HTTP request POST http://localhost:3000/api/auth/login
+2025-05-23 16:50:57.545 +05:30 [INF] Sending HTTP request POST http://localhost:3000/api/auth/login
+2025-05-23 16:50:58.876 +05:30 [INF] Received HTTP response headers after 1331.0133ms - 200
+2025-05-23 16:50:58.876 +05:30 [INF] End processing HTTP request after 1331.3515ms - 200
+2025-05-23 16:50:58.889 +05:30 [INF] Setting HTTP status code 200.
+2025-05-23 16:50:58.889 +05:30 [INF] Writing value of type 'MiddlewareResponse' as Json.
+2025-05-23 16:50:58.889 +05:30 [INF] Executed endpoint 'HTTP: POST /api/auth/login'
+2025-05-23 16:50:58.889 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5050/api/auth/login - 200 null application/json; charset=utf-8 1345.4226ms
+2025-05-23 16:50:58.899 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/common/me - null null
+2025-05-23 16:50:58.899 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:50:58.899 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5050/api/common/me - 204 null null 0.2968ms
+2025-05-23 16:50:58.901 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/common/me - null null
+2025-05-23 16:50:58.901 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:50:58.901 +05:30 [INF] Executing endpoint 'route1'
+2025-05-23 16:50:58.901 +05:30 [INF] Proxying to http://localhost:3000/api/common/me HTTP/2 RequestVersionOrLower 
+2025-05-23 16:50:59.945 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-05-23 16:51:00.616 +05:30 [INF] Executed endpoint 'route1'
+2025-05-23 16:51:00.617 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5050/api/common/me - 200 null application/json; charset=utf-8 1715.7193ms
+2025-05-23 16:51:00.627 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/auth/user-permissions - null null
+2025-05-23 16:51:00.627 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:51:00.627 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5050/api/auth/user-permissions - 204 null null 0.2451ms
+2025-05-23 16:51:00.630 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/auth/user-permissions - null null
+2025-05-23 16:51:00.630 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:51:00.630 +05:30 [INF] Executing endpoint 'route1'
+2025-05-23 16:51:00.630 +05:30 [INF] Proxying to http://localhost:3000/api/auth/user-permissions HTTP/2 RequestVersionOrLower 
+2025-05-23 16:51:01.939 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-05-23 16:51:02.029 +05:30 [INF] Executed endpoint 'route1'
+2025-05-23 16:51:02.029 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5050/api/auth/user-permissions - 200 null application/json; charset=utf-8 1399.3916ms
+2025-05-23 16:51:02.081 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/common/me - null null
+2025-05-23 16:51:02.082 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:51:02.082 +05:30 [INF] Executing endpoint 'route1'
+2025-05-23 16:51:02.082 +05:30 [INF] Proxying to http://localhost:3000/api/common/me HTTP/2 RequestVersionOrLower 
+2025-05-23 16:51:02.962 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-05-23 16:51:03.715 +05:30 [INF] Executed endpoint 'route1'
+2025-05-23 16:51:03.715 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5050/api/common/me - 200 null application/json; charset=utf-8 1633.9198ms
+2025-05-23 16:51:03.726 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/auth/user-permissions - null null
+2025-05-23 16:51:03.726 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:51:03.726 +05:30 [INF] Executing endpoint 'route1'
+2025-05-23 16:51:03.726 +05:30 [INF] Proxying to http://localhost:3000/api/auth/user-permissions HTTP/2 RequestVersionOrLower 
+2025-05-23 16:51:05.736 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-05-23 16:51:05.928 +05:30 [INF] Executed endpoint 'route1'
+2025-05-23 16:51:05.928 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5050/api/auth/user-permissions - 200 null application/json; charset=utf-8 2201.5142ms
+2025-05-23 16:51:05.936 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/common/me - null null
+2025-05-23 16:51:05.936 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:51:05.936 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5050/api/common/me - 204 null null 0.1849ms
+2025-05-23 16:51:05.937 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/common/me - null null
+2025-05-23 16:51:05.937 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:51:05.937 +05:30 [INF] Executing endpoint 'route1'
+2025-05-23 16:51:05.937 +05:30 [INF] Proxying to http://localhost:3000/api/common/me HTTP/2 RequestVersionOrLower 
+2025-05-23 16:51:06.910 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-05-23 16:51:07.565 +05:30 [INF] Executed endpoint 'route1'
+2025-05-23 16:51:07.566 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5050/api/common/me - 200 null application/json; charset=utf-8 1628.4558ms
+2025-05-23 16:51:07.572 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/auth/user-permissions - null null
+2025-05-23 16:51:07.572 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:51:07.573 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5050/api/auth/user-permissions - 204 null null 0.9625ms
+2025-05-23 16:51:07.574 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/auth/user-permissions - null null
+2025-05-23 16:51:07.574 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:51:07.574 +05:30 [INF] Executing endpoint 'route1'
+2025-05-23 16:51:07.574 +05:30 [INF] Proxying to http://localhost:3000/api/auth/user-permissions HTTP/2 RequestVersionOrLower 
+2025-05-23 16:51:08.887 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-05-23 16:51:08.949 +05:30 [INF] Executed endpoint 'route1'
+2025-05-23 16:51:08.949 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5050/api/auth/user-permissions - 200 null application/json; charset=utf-8 1374.5957ms
+2025-05-23 16:51:08.982 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/common/me - null null
+2025-05-23 16:51:08.983 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:51:08.983 +05:30 [INF] Executing endpoint 'route1'
+2025-05-23 16:51:08.983 +05:30 [INF] Proxying to http://localhost:3000/api/common/me HTTP/2 RequestVersionOrLower 
+2025-05-23 16:51:08.994 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/auth/user-permissions - null null
+2025-05-23 16:51:08.994 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:51:08.994 +05:30 [INF] Executing endpoint 'route1'
+2025-05-23 16:51:08.994 +05:30 [INF] Proxying to http://localhost:3000/api/auth/user-permissions HTTP/2 RequestVersionOrLower 
+2025-05-23 16:51:09.882 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-05-23 16:51:09.974 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/common/me - null null
+2025-05-23 16:51:09.974 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:51:09.974 +05:30 [INF] Executing endpoint 'route1'
+2025-05-23 16:51:09.974 +05:30 [INF] Proxying to http://localhost:3000/api/common/me HTTP/2 RequestVersionOrLower 
+2025-05-23 16:51:09.999 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-05-23 16:51:10.067 +05:30 [INF] Executed endpoint 'route1'
+2025-05-23 16:51:10.067 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5050/api/auth/user-permissions - 200 null application/json; charset=utf-8 1073.8707ms
+2025-05-23 16:51:10.456 +05:30 [INF] Executed endpoint 'route1'
+2025-05-23 16:51:10.456 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5050/api/common/me - 200 null application/json; charset=utf-8 1473.873ms
+2025-05-23 16:51:10.464 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/fvciapplication/GetApplicationListAsync - null null
+2025-05-23 16:51:10.464 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:51:10.464 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5050/api/fvciapplication/GetApplicationListAsync - 204 null null 0.1997ms
+2025-05-23 16:51:10.465 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/fvciapplication/GetApplicationListAsync - null null
+2025-05-23 16:51:10.465 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:51:10.466 +05:30 [INF] Executing endpoint 'route1'
+2025-05-23 16:51:10.466 +05:30 [INF] Proxying to http://localhost:3000/api/fvciapplication/GetApplicationListAsync HTTP/2 RequestVersionOrLower 
+2025-05-23 16:51:10.467 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/auth/user-permissions - null null
+2025-05-23 16:51:10.467 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:51:10.467 +05:30 [INF] Executing endpoint 'route1'
+2025-05-23 16:51:10.467 +05:30 [INF] Proxying to http://localhost:3000/api/auth/user-permissions HTTP/2 RequestVersionOrLower 
+2025-05-23 16:51:10.777 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-05-23 16:51:11.321 +05:30 [INF] Executed endpoint 'route1'
+2025-05-23 16:51:11.322 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5050/api/common/me - 200 null application/json; charset=utf-8 1347.3799ms
+2025-05-23 16:51:11.486 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-05-23 16:51:11.532 +05:30 [INF] Executed endpoint 'route1'
+2025-05-23 16:51:11.532 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5050/api/auth/user-permissions - 200 null application/json; charset=utf-8 1064.5005ms
+2025-05-23 16:51:11.787 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-05-23 16:51:11.891 +05:30 [INF] Executed endpoint 'route1'
+2025-05-23 16:51:11.891 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5050/api/fvciapplication/GetApplicationListAsync - 200 null application/json; charset=utf-8 1426.053ms
+2025-05-23 16:55:24.433 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/auth/logout - null null
+2025-05-23 16:55:24.433 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:55:24.433 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5050/api/auth/logout - 204 null null 0.214ms
+2025-05-23 16:55:24.434 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5050/api/auth/logout - null 0
+2025-05-23 16:55:24.434 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:55:24.434 +05:30 [INF] Executing endpoint 'route1'
+2025-05-23 16:55:24.434 +05:30 [INF] Proxying to http://localhost:3000/api/auth/logout HTTP/2 RequestVersionOrLower 
+2025-05-23 16:55:26.239 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-05-23 16:55:26.324 +05:30 [INF] Executed endpoint 'route1'
+2025-05-23 16:55:26.325 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5050/api/auth/logout - 200 null application/json; charset=utf-8 1890.4517ms
+2025-05-23 16:55:26.348 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/captcha/generate - null null
+2025-05-23 16:55:26.349 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:55:26.349 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5050/api/captcha/generate - 204 null null 0.7769ms
+2025-05-23 16:55:26.353 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5050/api/captcha/generate - application/json 2
+2025-05-23 16:55:26.353 +05:30 [INF] CORS policy execution successful.
+2025-05-23 16:55:26.353 +05:30 [INF] Executing endpoint 'route1'
+2025-05-23 16:55:26.354 +05:30 [INF] Proxying to http://localhost:3000/api/captcha/generate HTTP/2 RequestVersionOrLower 
+2025-05-23 16:55:26.520 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-05-23 16:55:26.520 +05:30 [INF] Executed endpoint 'route1'
+2025-05-23 16:55:26.520 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5050/api/captcha/generate - 200 null application/json; charset=utf-8 167.5139ms
+2025-05-23 17:03:44.427 +05:30 [INF] Application is shutting down...
+2025-05-23 17:03:57.099 +05:30 [INF] User profile is available. Using 'C:\Users\vaibh\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-05-23 17:03:57.158 +05:30 [INF] Loading proxy data from config.
+2025-05-23 17:03:57.311 +05:30 [WRN] Overriding address(es) 'http://localhost:5272'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead.
+2025-05-23 17:03:57.315 +05:30 [INF] Now listening on: http://localhost:5050
+2025-05-23 17:03:57.315 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-05-23 17:03:57.316 +05:30 [INF] Hosting environment: Development
+2025-05-23 17:03:57.316 +05:30 [INF] Content root path: D:\nsdl\nsdl-middleware
+2025-05-23 17:03:57.466 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5050/ - null null
+2025-05-23 17:03:57.497 +05:30 [INF] Executing endpoint 'route1'
+2025-05-23 17:03:57.540 +05:30 [INF] Proxying to http://localhost:3000/ HTTP/2 RequestVersionOrLower 
+2025-05-23 17:03:58.440 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-05-23 17:03:58.455 +05:30 [INF] Executed endpoint 'route1'
+2025-05-23 17:03:58.457 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5050/ - 200 null application/json; charset=utf-8 993.4886ms
+2025-05-23 17:03:58.514 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5050/favicon.ico - null null
+2025-05-23 17:03:58.515 +05:30 [INF] Executing endpoint 'route1'
+2025-05-23 17:03:58.515 +05:30 [INF] Proxying to http://localhost:3000/favicon.ico HTTP/2 RequestVersionOrLower 
+2025-05-23 17:03:58.522 +05:30 [INF] Received HTTP/1.1 response 404.
+2025-05-23 17:03:58.523 +05:30 [INF] Executed endpoint 'route1'
+2025-05-23 17:03:58.524 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5050/favicon.ico - 404 0 null 10.3909ms
+2025-05-23 17:04:03.898 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/captcha/generate - null null
+2025-05-23 17:04:03.899 +05:30 [INF] CORS policy execution successful.
+2025-05-23 17:04:03.901 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5050/api/captcha/generate - 204 null null 3.3641ms
+2025-05-23 17:04:03.905 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5050/api/captcha/generate - application/json 2
+2025-05-23 17:04:03.905 +05:30 [INF] CORS policy execution successful.
+2025-05-23 17:04:03.906 +05:30 [INF] Executing endpoint 'route1'
+2025-05-23 17:04:03.907 +05:30 [INF] Proxying to http://localhost:3000/api/captcha/generate HTTP/2 RequestVersionOrLower 
+2025-05-23 17:04:04.209 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-05-23 17:04:04.211 +05:30 [INF] Executed endpoint 'route1'
+2025-05-23 17:04:04.211 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5050/api/captcha/generate - 200 null application/json; charset=utf-8 306.1467ms
+2025-05-23 18:19:10.686 +05:30 [INF] User profile is available. Using 'C:\Users\vaibh\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-05-23 18:19:10.917 +05:30 [INF] Loading proxy data from config.
+2025-05-23 18:19:11.348 +05:30 [WRN] Overriding address(es) 'http://localhost:5272'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead.
+2025-05-23 18:19:11.369 +05:30 [INF] Now listening on: http://localhost:5050
+2025-05-23 18:19:11.370 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-05-23 18:19:11.370 +05:30 [INF] Hosting environment: Development
+2025-05-23 18:19:11.370 +05:30 [INF] Content root path: D:\nsdl\nsdl-middleware
+2025-05-23 18:19:12.033 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5050/ - null null
+2025-05-23 18:19:12.164 +05:30 [INF] Executing endpoint 'route1'
+2025-05-23 18:19:12.371 +05:30 [INF] Proxying to http://localhost:3000/ HTTP/2 RequestVersionOrLower 
+2025-05-23 18:19:21.380 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-05-23 18:19:21.446 +05:30 [INF] Executed endpoint 'route1'
+2025-05-23 18:19:21.453 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5050/ - 200 null application/json; charset=utf-8 9424.5292ms
+2025-05-23 18:19:22.328 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5050/favicon.ico - null null
+2025-05-23 18:19:22.329 +05:30 [INF] Executing endpoint 'route1'
+2025-05-23 18:19:22.330 +05:30 [INF] Proxying to http://localhost:3000/favicon.ico HTTP/2 RequestVersionOrLower 
+2025-05-23 18:19:22.367 +05:30 [INF] Received HTTP/1.1 response 404.
+2025-05-23 18:19:22.369 +05:30 [INF] Executed endpoint 'route1'
+2025-05-23 18:19:22.370 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5050/favicon.ico - 404 0 null 43.6817ms
+2025-05-23 18:33:26.426 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5050/api/dashboard/GetDashboardData - null null
+2025-05-23 18:33:26.427 +05:30 [INF] CORS policy execution successful.
+2025-05-23 18:33:26.429 +05:30 [INF] Executing endpoint 'route1'
+2025-05-23 18:33:26.429 +05:30 [INF] Proxying to http://localhost:3000/api/dashboard/GetDashboardData HTTP/2 RequestVersionOrLower 
+2025-05-23 18:33:27.079 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-05-23 18:33:27.081 +05:30 [INF] Executed endpoint 'route1'
+2025-05-23 18:33:27.081 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5050/api/dashboard/GetDashboardData - 200 null application/json; charset=utf-8 654.7982ms
+2025-05-23 18:33:29.993 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/captcha/generate - null null
+2025-05-23 18:33:29.993 +05:30 [INF] CORS policy execution successful.
+2025-05-23 18:33:29.994 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5050/api/captcha/generate - 204 null null 0.9957ms
+2025-05-23 18:33:29.996 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5050/api/captcha/generate - application/json 2
+2025-05-23 18:33:29.996 +05:30 [INF] CORS policy execution successful.
+2025-05-23 18:33:29.996 +05:30 [INF] Executing endpoint 'route1'
+2025-05-23 18:33:29.997 +05:30 [INF] Proxying to http://localhost:3000/api/captcha/generate HTTP/2 RequestVersionOrLower 
+2025-05-23 18:33:31.498 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-05-23 18:33:31.501 +05:30 [INF] Executed endpoint 'route1'
+2025-05-23 18:33:31.502 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5050/api/captcha/generate - 200 null application/json; charset=utf-8 1505.8056ms
+2025-05-23 18:47:57.062 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/captcha/generate - null null
+2025-05-23 18:47:57.062 +05:30 [INF] CORS policy execution successful.
+2025-05-23 18:47:57.063 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5050/api/captcha/generate - 204 null null 0.5674ms
+2025-05-23 18:47:57.064 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5050/api/captcha/generate - application/json 2
+2025-05-23 18:47:57.064 +05:30 [INF] CORS policy execution successful.
+2025-05-23 18:47:57.065 +05:30 [INF] Executing endpoint 'route1'
+2025-05-23 18:47:57.065 +05:30 [INF] Proxying to http://localhost:3000/api/captcha/generate HTTP/2 RequestVersionOrLower 
+2025-05-23 18:47:58.367 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-05-23 18:47:58.368 +05:30 [INF] Executed endpoint 'route1'
+2025-05-23 18:47:58.368 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5050/api/captcha/generate - 200 null application/json; charset=utf-8 1303.9038ms
+2025-05-23 18:52:14.286 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/captcha/generate - null null
+2025-05-23 18:52:14.286 +05:30 [INF] CORS policy execution successful.
+2025-05-23 18:52:14.286 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5050/api/captcha/generate - 204 null null 0.4742ms
+2025-05-23 18:52:14.287 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5050/api/captcha/generate - application/json 2
+2025-05-23 18:52:14.288 +05:30 [INF] CORS policy execution successful.
+2025-05-23 18:52:14.288 +05:30 [INF] Executing endpoint 'route1'
+2025-05-23 18:52:14.288 +05:30 [INF] Proxying to http://localhost:3000/api/captcha/generate HTTP/2 RequestVersionOrLower 
+2025-05-23 18:52:20.186 +05:30 [INF] Received HTTP/1.1 response 500.
+2025-05-23 18:52:20.187 +05:30 [INF] Executed endpoint 'route1'
+2025-05-23 18:52:20.188 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5050/api/captcha/generate - 500 null application/json; charset=utf-8 5900.1554ms
+2025-05-23 19:05:01.690 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/captcha/generate - null null
+2025-05-23 19:05:01.691 +05:30 [INF] CORS policy execution successful.
+2025-05-23 19:05:01.692 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5050/api/captcha/generate - 204 null null 1.4065ms
+2025-05-23 19:05:01.695 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5050/api/captcha/generate - application/json 2
+2025-05-23 19:05:01.695 +05:30 [INF] CORS policy execution successful.
+2025-05-23 19:05:01.700 +05:30 [INF] Executing endpoint 'route1'
+2025-05-23 19:05:01.701 +05:30 [INF] Proxying to http://localhost:3000/api/captcha/generate HTTP/2 RequestVersionOrLower 
+2025-05-23 19:05:02.788 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-05-23 19:05:02.789 +05:30 [INF] Executed endpoint 'route1'
+2025-05-23 19:05:02.789 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5050/api/captcha/generate - 200 null application/json; charset=utf-8 1094.3485ms
+2025-05-23 19:05:17.762 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/captcha/generate - null null
+2025-05-23 19:05:17.763 +05:30 [INF] CORS policy execution successful.
+2025-05-23 19:05:17.764 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5050/api/captcha/generate - 204 null null 2.0182ms
+2025-05-23 19:05:17.767 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5050/api/captcha/generate - application/json 2
+2025-05-23 19:05:17.767 +05:30 [INF] CORS policy execution successful.
+2025-05-23 19:05:17.770 +05:30 [INF] Executing endpoint 'route1'
+2025-05-23 19:05:17.771 +05:30 [INF] Proxying to http://localhost:3000/api/captcha/generate HTTP/2 RequestVersionOrLower 
+2025-05-23 19:05:18.066 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-05-23 19:05:18.067 +05:30 [INF] Executed endpoint 'route1'
+2025-05-23 19:05:18.068 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5050/api/captcha/generate - 200 null application/json; charset=utf-8 301.0855ms
+2025-05-23 19:14:22.122 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/captcha/generate - null null
+2025-05-23 19:14:22.123 +05:30 [INF] CORS policy execution successful.
+2025-05-23 19:14:22.123 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5050/api/captcha/generate - 204 null null 0.6016ms
+2025-05-23 19:14:22.124 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5050/api/captcha/generate - application/json 2
+2025-05-23 19:14:22.124 +05:30 [INF] CORS policy execution successful.
+2025-05-23 19:14:22.125 +05:30 [INF] Executing endpoint 'route1'
+2025-05-23 19:14:22.125 +05:30 [INF] Proxying to http://localhost:3000/api/captcha/generate HTTP/2 RequestVersionOrLower 
+2025-05-23 19:14:23.819 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-05-23 19:14:23.819 +05:30 [INF] Executed endpoint 'route1'
+2025-05-23 19:14:23.820 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5050/api/captcha/generate - 200 null application/json; charset=utf-8 1695.4485ms

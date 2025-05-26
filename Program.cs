@@ -7,16 +7,25 @@ using System.Text;
 using System.Text.Json;
 
 var builder = WebApplication.CreateBuilder(args);
-var allowedOrigins = builder.Configuration.GetSection("Cors:AllowedOrigins").Get<string[]>()
-                      ?? throw new InvalidOperationException("CORS:AllowedOrigins configuration section is missing or empty.");
+var allowedOrigins = builder.Configuration.GetSection("Cors:AllowedOrigins").Get<string[]>();
 
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowSpecificOrigins", policy =>
     {
-        policy.WithOrigins(allowedOrigins)
-              .AllowAnyMethod()
-              .AllowAnyHeader();
+        if (allowedOrigins == null || allowedOrigins.Length == 0)
+        {
+            // Allow all origins
+            policy.AllowAnyOrigin()
+                  .AllowAnyMethod()
+                  .AllowAnyHeader();
+        }
+        else
+        {
+            policy.WithOrigins(allowedOrigins)
+                  .AllowAnyMethod()
+                  .AllowAnyHeader();
+        }
     });
 });
 
@@ -44,6 +53,7 @@ builder.Host.UseSerilog();
 builder.WebHost.ConfigureKestrel(options =>
 {
     builder.Configuration.GetSection("Kestrel").Bind(options);
+    options.AddServerHeader = false;
 });
 
 // Add Reverse Proxy
@@ -61,7 +71,13 @@ app.Use(async (context, next) =>
     context.Response.Headers.TryAdd("Strict-Transport-Security", "max-age=63072000; includeSubDomains; preload");
     context.Response.Headers.TryAdd("Content-Security-Policy", "default-src 'self'; script-src 'self'; object-src 'none'; frame-ancestors 'none';");
     context.Response.Headers.TryAdd("Permissions-Policy", "geolocation=(), camera=(), microphone=()");
-
+    context.Response.OnStarting(() =>
+    {
+        context.Response.Headers.Remove("Server");
+        // context.Response.Headers.Remove("server");
+        context.Response.Headers.Remove("x-powered-by");
+        return Task.CompletedTask;
+    });
     await next();
 });
 

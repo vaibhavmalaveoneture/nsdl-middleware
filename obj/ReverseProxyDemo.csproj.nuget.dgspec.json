@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\nsdl\\nsdl-proxy-new\\ReverseProxyDemo\\ReverseProxyDemo.csproj": {}
+    "D:\\nsdl\\nsdl-middleware\\ReverseProxyDemo.csproj": {}
   },
   "projects": {
-    "D:\\nsdl\\nsdl-proxy-new\\ReverseProxyDemo\\ReverseProxyDemo.csproj": {
+    "D:\\nsdl\\nsdl-middleware\\ReverseProxyDemo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\nsdl\\nsdl-proxy-new\\ReverseProxyDemo\\ReverseProxyDemo.csproj",
+        "projectUniqueName": "D:\\nsdl\\nsdl-middleware\\ReverseProxyDemo.csproj",
         "projectName": "ReverseProxyDemo",
-        "projectPath": "D:\\nsdl\\nsdl-proxy-new\\ReverseProxyDemo\\ReverseProxyDemo.csproj",
+        "projectPath": "D:\\nsdl\\nsdl-middleware\\ReverseProxyDemo.csproj",
         "packagesPath": "C:\\Users\\vaibh\\.nuget\\packages\\",
-        "outputPath": "D:\\nsdl\\nsdl-proxy-new\\ReverseProxyDemo\\obj\\",
+        "outputPath": "D:\\nsdl\\nsdl-middleware\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\vaibh\\AppData\\Roaming\\NuGet\\NuGet.Config"

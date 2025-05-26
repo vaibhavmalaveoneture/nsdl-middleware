@@ -1,0 +1,20 @@
+2025-05-24 12:02:56.700 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/captcha/generate - null null
+2025-05-24 12:02:56.707 +05:30 [INF] CORS policy execution successful.
+2025-05-24 12:02:56.707 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5050/api/captcha/generate - 204 null null 7.1607ms
+2025-05-24 12:02:56.709 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5050/api/captcha/generate - application/json 2
+2025-05-24 12:02:56.710 +05:30 [INF] CORS policy execution successful.
+2025-05-24 12:02:56.710 +05:30 [INF] Executing endpoint 'route1'
+2025-05-24 12:02:56.710 +05:30 [INF] Proxying to http://localhost:3000/api/captcha/generate HTTP/2 RequestVersionOrLower 
+2025-05-24 12:02:58.048 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-05-24 12:02:58.048 +05:30 [INF] Executed endpoint 'route1'
+2025-05-24 12:02:58.048 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5050/api/captcha/generate - 200 null application/json; charset=utf-8 1339.141ms
+2025-05-24 12:12:48.379 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5050/api/captcha/generate - null null
+2025-05-24 12:12:48.379 +05:30 [INF] CORS policy execution successful.
+2025-05-24 12:12:48.380 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5050/api/captcha/generate - 204 null null 1.0672ms
+2025-05-24 12:12:48.385 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5050/api/captcha/generate - application/json 2
+2025-05-24 12:12:48.386 +05:30 [INF] CORS policy execution successful.
+2025-05-24 12:12:48.388 +05:30 [INF] Executing endpoint 'route1'
+2025-05-24 12:12:48.390 +05:30 [INF] Proxying to http://localhost:3000/api/captcha/generate HTTP/2 RequestVersionOrLower 
+2025-05-24 12:12:49.099 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-05-24 12:12:49.133 +05:30 [INF] Executed endpoint 'route1'
+2025-05-24 12:12:49.133 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5050/api/captcha/generate - 200 null application/json; charset=utf-8 748.0744ms
