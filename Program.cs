@@ -7,18 +7,16 @@ using System.Text;
 using System.Text.Json;
 
 var builder = WebApplication.CreateBuilder(args);
-var allowedOrigins = builder.Configuration.GetSection("Cors:AllowedOrigins").Get<string[]>();
+var allowedOrigins = builder.Configuration.GetSection("Cors:AllowedOrigins").Get<string[]>()
+                      ?? throw new InvalidOperationException("CORS:AllowedOrigins configuration section is missing or empty.");
 
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowSpecificOrigins", policy =>
     {
-
-            // Allow all origins
-            policy.AllowAnyOrigin()
-                  .AllowAnyMethod()
-                  .AllowAnyHeader();
-        
+        policy.WithOrigins(allowedOrigins)
+              .AllowAnyMethod()
+              .AllowAnyHeader();
     });
 });
 
@@ -67,8 +65,8 @@ app.Use(async (context, next) =>
     context.Response.OnStarting(() =>
     {
         context.Response.Headers.Remove("Server");
-        // context.Response.Headers.Remove("server");
-        context.Response.Headers.Remove("x-powered-by");
+        context.Response.Headers.Remove("server");
+        context.Response.Headers.Remove("Server");
         return Task.CompletedTask;
     });
     await next();
