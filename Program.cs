@@ -2,6 +2,8 @@
 using NSDL.Middleware.Helpers;
 using NSDL.Middleware.Interfaces;
 using NSDL.Middleware.Models;
+using ReverseProxyDemo.Interfaces;
+using ReverseProxyDemo.Models;
 using Serilog;
 using System.Text;
 using System.Text.Json;
@@ -30,6 +32,7 @@ builder.Services.AddHttpClient("backend", client =>
     client.BaseAddress = new Uri(backendBaseUrl);
 });
 
+var baseUploadFolder = builder.Configuration["baseUploadFolder"] ?? throw new InvalidOperationException("Base Upload path is not configured");
 
 Log.Logger = new LoggerConfiguration()
     .Enrich.FromLogContext()
@@ -261,6 +264,103 @@ app.MapPost("/api/auth/resend-otp", async (
 
     return Results.Ok(result);
 });
+
+
+#region createFile in middleware
+app.MapPost("/api/fvciapplication/UploadFileAsync", async (
+    HttpContext context,
+    IHttpClientFactory httpClientFactory,
+    IFileHelper fileHelper,
+    ILoggerFactory loggerFactory) =>
+{
+    var logger = loggerFactory.CreateLogger("fvciapplication/UploadFileAsync");
+
+    var httpClient = httpClientFactory.CreateClient("backend");
+
+    var form = await context.Request.ReadFormAsync();
+
+    if (form == null)
+        throw new ArgumentException("File is missing");
+
+    var request = new FileUploadData
+    {
+        file = form.Files.GetFile("file") ?? throw new ArgumentException("File is missing"),
+        applicationId = form?["applicationId"] ?? string.Empty,
+        docType = form?["docType"] ?? string.Empty,
+        documentIdentifier = form?["documentIdentifier"] ?? string.Empty
+    };
+
+    string isFileValid=fileHelper.fileVlaidation(request);
+
+    if(!isFileValid.Equals("success",StringComparison.OrdinalIgnoreCase))
+        throw new ArgumentException(isFileValid);
+
+    await fileHelper.fileCreation(request,baseUploadFolder);
+
+
+    var multipartContent = new MultipartFormDataContent();
+
+    // Add file(s)
+    foreach (var file in form.Files)
+    {
+        var fileContent = new StreamContent(file.OpenReadStream());
+        fileContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue(file.ContentType);
+        multipartContent.Add(fileContent, file.Name, file.FileName);
+    }
+
+    // Add other form fields
+    foreach (var field in form)
+    {
+        multipartContent.Add(new StringContent(field.Value), field.Key);
+    }
+
+    var requestMessage = new HttpRequestMessage(HttpMethod.Post, "api/fvciapplication/UploadFileAsync")
+    {
+        Content = multipartContent
+    };
+
+    // Forward Authorization header if present
+    if (context.Request.Headers.TryGetValue("Authorization", out var authHeader))
+    {
+        requestMessage.Headers.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", authHeader.ToString().Split(" ").Last());
+    }
+
+    var backendResponse = await httpClient.SendAsync(requestMessage);
+
+    if (!backendResponse.IsSuccessStatusCode)
+    {
+        var backendContent = await backendResponse.Content.ReadAsStringAsync();
+        return Results.Content(
+         backendContent,
+         contentType: backendResponse.Content.Headers.ContentType?.ToString() ?? "application/json",
+         statusCode: (int)backendResponse.StatusCode
+     );
+    }
+
+    var json = await backendResponse.Content.ReadAsStringAsync();
+    var result = JsonSerializer.Deserialize<MiddlewareResponse>(json, new JsonSerializerOptions
+    {
+        PropertyNameCaseInsensitive = true
+    });
+
+    if (result?.Data is JsonElement dataElement && dataElement.ValueKind == JsonValueKind.Object)
+    {
+        var email = dataElement.GetProperty("email").GetString();
+        var otp = dataElement.GetProperty("otp").GetString();
+        var message = dataElement.GetProperty("message").GetString();
+
+        if (!string.IsNullOrWhiteSpace(email) &&
+            !string.IsNullOrWhiteSpace(otp) &&
+            !string.IsNullOrWhiteSpace(message))
+        {
+           // await emailHelper.SendOtpEmailAsync(email, otp, message);
+            result.Data = null;
+        }
+    }
+
+    return Results.Ok(result);
+});
+#endregion
 app.MapReverseProxy();
 
 app.Run();
