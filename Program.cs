@@ -88,6 +88,204 @@ app.Use(async (context, next) =>
     await next();
 });
 
+
+app.MapPost("/api/auth/login", async (
+    HttpContext context,
+    IHttpClientFactory httpClientFactory,
+    IEmailHelper emailHelper,
+    ILoggerFactory loggerFactory) =>
+{
+    var logger = loggerFactory.CreateLogger("Login");
+
+    var httpClient = httpClientFactory.CreateClient("backend");
+
+    var requestBody = await new StreamReader(context.Request.Body).ReadToEndAsync();
+
+    var content = new StringContent(requestBody, Encoding.UTF8, "application/json");
+
+    var backendResponse = await httpClient.PostAsync("api/auth/login", content);
+
+    if (!backendResponse.IsSuccessStatusCode)
+    {
+        var backendContent = await backendResponse.Content.ReadAsStringAsync();
+        return Results.Content(
+         backendContent,
+         contentType: backendResponse.Content.Headers.ContentType?.ToString() ?? "application/json",
+         statusCode: (int)backendResponse.StatusCode
+     );
+    }
+
+
+    var json = await backendResponse.Content.ReadAsStringAsync();
+    var result = JsonSerializer.Deserialize<MiddlewareResponse>(json, new JsonSerializerOptions
+    {
+        PropertyNameCaseInsensitive = true
+    });
+
+    if (result?.Data is JsonElement dataElement && dataElement.ValueKind == JsonValueKind.Object)
+    {
+        var email = dataElement.GetProperty("email").GetString();
+        var otp = dataElement.GetProperty("otp").GetString();
+        var message = dataElement.GetProperty("message").GetString();
+
+        if (!string.IsNullOrWhiteSpace(email) &&
+            !string.IsNullOrWhiteSpace(otp) &&
+            !string.IsNullOrWhiteSpace(message))
+        {
+            await emailHelper.SendOtpEmailAsync(email, otp, message);
+            result.Data = null;
+        }
+    }
+
+    return Results.Ok(result);
+});
+app.MapPost("/api/auth/send-otp", async (
+    HttpContext context,
+    IHttpClientFactory httpClientFactory,
+    IEmailHelper emailHelper,
+    ILoggerFactory loggerFactory) =>
+{
+    var logger = loggerFactory.CreateLogger("send-otp");
+
+    var httpClient = httpClientFactory.CreateClient("backend");
+
+    var requestBody = await new StreamReader(context.Request.Body).ReadToEndAsync();
+
+    var content = new StringContent(requestBody, Encoding.UTF8, "application/json");
+
+    var backendResponse = await httpClient.PostAsync("api/auth/send-otp", content);
+
+    if (!backendResponse.IsSuccessStatusCode)
+    {
+        var backendContent = await backendResponse.Content.ReadAsStringAsync();
+        return Results.Content(
+         backendContent,
+         contentType: backendResponse.Content.Headers.ContentType?.ToString() ?? "application/json",
+         statusCode: (int)backendResponse.StatusCode
+     );
+    }
+
+
+    var json = await backendResponse.Content.ReadAsStringAsync();
+    var result = JsonSerializer.Deserialize<MiddlewareResponse>(json, new JsonSerializerOptions
+    {
+        PropertyNameCaseInsensitive = true
+    });
+
+    if (result?.Data is JsonElement dataElement && dataElement.ValueKind == JsonValueKind.Object)
+    {
+        var email = dataElement.GetProperty("email").GetString();
+        var otp = dataElement.GetProperty("otp").GetString();
+        var message = dataElement.GetProperty("message").GetString();
+
+        if (!string.IsNullOrWhiteSpace(email) &&
+            !string.IsNullOrWhiteSpace(otp) &&
+            !string.IsNullOrWhiteSpace(message))
+        {
+            await emailHelper.SendOtpEmailAsync(email, otp, message);
+            result.Data = null;
+        }
+    }
+
+    return Results.Ok(result);
+});
+app.MapPost("/api/auth/forgot-password/send-otp", async (
+    HttpContext context,
+    IHttpClientFactory httpClientFactory,
+    IEmailHelper emailHelper,
+    ILoggerFactory loggerFactory) =>
+{
+    var logger = loggerFactory.CreateLogger("forgot-password/send-otp");
+
+    var httpClient = httpClientFactory.CreateClient("backend");
+
+    var requestBody = await new StreamReader(context.Request.Body).ReadToEndAsync();
+
+    var content = new StringContent(requestBody, Encoding.UTF8, "application/json");
+
+    var backendResponse = await httpClient.PostAsync("api/auth/forgot-password/send-otp", content);
+
+    if (!backendResponse.IsSuccessStatusCode)
+    {
+        var backendContent = await backendResponse.Content.ReadAsStringAsync();
+        return Results.Content(
+         backendContent,
+         contentType: backendResponse.Content.Headers.ContentType?.ToString() ?? "application/json",
+         statusCode: (int)backendResponse.StatusCode
+     );
+    }
+
+    var json = await backendResponse.Content.ReadAsStringAsync();
+    var result = JsonSerializer.Deserialize<MiddlewareResponse>(json, new JsonSerializerOptions
+    {
+        PropertyNameCaseInsensitive = true
+    });
+
+    if (result?.Data is JsonElement dataElement && dataElement.ValueKind == JsonValueKind.Object)
+    {
+        var email = dataElement.GetProperty("email").GetString();
+        var otp = dataElement.GetProperty("otp").GetString();
+        var message = dataElement.GetProperty("message").GetString();
+
+        if (!string.IsNullOrWhiteSpace(email) &&
+            !string.IsNullOrWhiteSpace(otp) &&
+            !string.IsNullOrWhiteSpace(message))
+        {
+            await emailHelper.SendOtpEmailAsync(email, otp, message);
+            result.Data = null;
+        }
+    }
+
+    return Results.Ok(result);
+});
+app.MapPost("/api/auth/resend-otp", async (
+    HttpContext context,
+    IHttpClientFactory httpClientFactory,
+    IEmailHelper emailHelper,
+    ILoggerFactory loggerFactory) =>
+{
+    var logger = loggerFactory.CreateLogger("resend-otp");
+
+    var httpClient = httpClientFactory.CreateClient("backend");
+
+    var emailparameter = context.Request.Query["email"].ToString();
+
+    var backendResponse = await httpClient.PostAsync("api/auth/resend-otp?email=" + emailparameter, null);
+
+    if (!backendResponse.IsSuccessStatusCode)
+    {
+        var backendContent = await backendResponse.Content.ReadAsStringAsync();
+        return Results.Content(
+         backendContent,
+         contentType: backendResponse.Content.Headers.ContentType?.ToString() ?? "application/json",
+         statusCode: (int)backendResponse.StatusCode
+     );
+    }
+
+    var json = await backendResponse.Content.ReadAsStringAsync();
+    var result = JsonSerializer.Deserialize<MiddlewareResponse>(json, new JsonSerializerOptions
+    {
+        PropertyNameCaseInsensitive = true
+    });
+
+    if (result?.Data is JsonElement dataElement && dataElement.ValueKind == JsonValueKind.Object)
+    {
+        var email = dataElement.GetProperty("email").GetString();
+        var otp = dataElement.GetProperty("otp").GetString();
+        var message = dataElement.GetProperty("message").GetString();
+
+        if (!string.IsNullOrWhiteSpace(email) &&
+            !string.IsNullOrWhiteSpace(otp) &&
+            !string.IsNullOrWhiteSpace(message))
+        {
+            await emailHelper.SendOtpEmailAsync(email, otp, message);
+            result.Data = null;
+        }
+    }
+
+    return Results.Ok(result);
+});
+
 // Map your endpoints here (only sample shown)
 app.MapReverseProxy();
 
