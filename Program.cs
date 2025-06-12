@@ -2,6 +2,7 @@
 using NSDL.Middleware.Helpers;
 using NSDL.Middleware.Interfaces;
 using NSDL.Middleware.Models;
+using ReverseProxyDemo.Helper;
 using ReverseProxyDemo.Interfaces;
 using ReverseProxyDemo.Models;
 using Serilog;
@@ -23,6 +24,7 @@ builder.Services.AddCors(options =>
 });
 
 builder.Services.AddScoped<IEmailHelper, EmailHelper>();
+builder.Services.AddScoped<ISmsHelper, SmsHelper>();
 
 var backendBaseUrl = builder.Configuration["ReverseProxy:Clusters:backend:Destinations:backend1:Address"]
     ?? throw new InvalidOperationException("Backend base URL is not configured.");
@@ -72,6 +74,7 @@ app.MapPost("/api/auth/login", async (
     HttpContext context,
     IHttpClientFactory httpClientFactory,
     IEmailHelper emailHelper,
+    ISmsHelper smsHelper,
     ILoggerFactory loggerFactory) =>
 {
     var logger = loggerFactory.CreateLogger("Login");
@@ -106,14 +109,28 @@ app.MapPost("/api/auth/login", async (
         var email = dataElement.GetProperty("email").GetString();
         var otp = dataElement.GetProperty("otp").GetString();
         var message = dataElement.GetProperty("message").GetString();
-
+        /*var phoneno = dataElement.GetProperty("phoneno").GetString();*/
         if (!string.IsNullOrWhiteSpace(email) &&
             !string.IsNullOrWhiteSpace(otp) &&
             !string.IsNullOrWhiteSpace(message))
         {
-            await emailHelper.SendOtpEmailAsync(email, otp, message);
-            result.Data = null;
+            try
+            {
+                await emailHelper.SendOtpEmailAsync(email, otp, message);
+            }
+            catch { }
         }
+      /*  if (!string.IsNullOrWhiteSpace(phoneno) &&
+            !string.IsNullOrWhiteSpace(otp) &&
+            !string.IsNullOrWhiteSpace(message))
+        {
+            try
+            {
+                await smsHelper.SendOtpSmsAsync(phoneno, otp, message);
+            }
+            catch { }
+        }*/
+        result.Data = null;
     }
 
     return Results.Ok(result);
@@ -122,6 +139,7 @@ app.MapPost("/api/auth/send-otp", async (
     HttpContext context,
     IHttpClientFactory httpClientFactory,
     IEmailHelper emailHelper,
+    ISmsHelper smsHelper,
     ILoggerFactory loggerFactory) =>
 {
     var logger = loggerFactory.CreateLogger("send-otp");
@@ -156,14 +174,29 @@ app.MapPost("/api/auth/send-otp", async (
         var email = dataElement.GetProperty("email").GetString();
         var otp = dataElement.GetProperty("otp").GetString();
         var message = dataElement.GetProperty("message").GetString();
-
+        var phoneno = dataElement.GetProperty("phoneno").GetString();
         if (!string.IsNullOrWhiteSpace(email) &&
             !string.IsNullOrWhiteSpace(otp) &&
             !string.IsNullOrWhiteSpace(message))
         {
-            await emailHelper.SendOtpEmailAsync(email, otp, message);
-            result.Data = null;
+            try
+            {
+                await emailHelper.SendOtpEmailAsync(email, otp, message);
+            }
+            catch { }
+            
         }
+        if (!string.IsNullOrWhiteSpace(phoneno) &&
+            !string.IsNullOrWhiteSpace(otp) &&
+            !string.IsNullOrWhiteSpace(message))
+        {
+            try
+            {
+                await smsHelper.SendOtpSmsAsync(phoneno, otp, message);
+            }
+            catch { }
+        }
+        result.Data = null;
     }
 
     return Results.Ok(result);
@@ -172,6 +205,7 @@ app.MapPost("/api/auth/forgot-password/send-otp", async (
     HttpContext context,
     IHttpClientFactory httpClientFactory,
     IEmailHelper emailHelper,
+    ISmsHelper smsHelper,
     ILoggerFactory loggerFactory) =>
 {
     var logger = loggerFactory.CreateLogger("forgot-password/send-otp");
@@ -205,14 +239,28 @@ app.MapPost("/api/auth/forgot-password/send-otp", async (
         var email = dataElement.GetProperty("email").GetString();
         var otp = dataElement.GetProperty("otp").GetString();
         var message = dataElement.GetProperty("message").GetString();
-
+        /*var phoneno = dataElement.GetProperty("phoneno").GetString();*/
         if (!string.IsNullOrWhiteSpace(email) &&
             !string.IsNullOrWhiteSpace(otp) &&
             !string.IsNullOrWhiteSpace(message))
         {
-            await emailHelper.SendOtpEmailAsync(email, otp, message);
-            result.Data = null;
+            try
+            {
+                await emailHelper.SendOtpEmailAsync(email, otp, message);
+            }
+            catch { }
         }
+       /* if (!string.IsNullOrWhiteSpace(phoneno) &&
+            !string.IsNullOrWhiteSpace(otp) &&
+            !string.IsNullOrWhiteSpace(message))
+        {
+            try
+            {
+                await smsHelper.SendOtpSmsAsync(phoneno, otp, message);
+            }
+            catch { }
+        }*/
+        result.Data = null;
     }
 
     return Results.Ok(result);
@@ -221,6 +269,7 @@ app.MapPost("/api/auth/resend-otp", async (
     HttpContext context,
     IHttpClientFactory httpClientFactory,
     IEmailHelper emailHelper,
+    ISmsHelper smsHelper,
     ILoggerFactory loggerFactory) =>
 {
     var logger = loggerFactory.CreateLogger("resend-otp");
@@ -252,14 +301,28 @@ app.MapPost("/api/auth/resend-otp", async (
         var email = dataElement.GetProperty("email").GetString();
         var otp = dataElement.GetProperty("otp").GetString();
         var message = dataElement.GetProperty("message").GetString();
-
+        /*var phoneno = dataElement.GetProperty("phoneno").GetString();*/
         if (!string.IsNullOrWhiteSpace(email) &&
             !string.IsNullOrWhiteSpace(otp) &&
             !string.IsNullOrWhiteSpace(message))
         {
-            await emailHelper.SendOtpEmailAsync(email, otp, message);
-            result.Data = null;
+            try
+            {
+                await emailHelper.SendOtpEmailAsync(email, otp, message);
+            }
+            catch { }
         }
+       /* if(!string.IsNullOrWhiteSpace(phoneno) &&
+            !string.IsNullOrWhiteSpace(otp) &&
+            !string.IsNullOrWhiteSpace(message))
+        {
+            try
+            {
+                await smsHelper.SendOtpSmsAsync(phoneno, otp, message);
+            }
+            catch { }
+        }*/
+        result.Data = null;
     }
 
     return Results.Ok(result);
