@@ -17,11 +17,12 @@ namespace ReverseProxyDemo.Helper
 
         public async Task<bool> SendOtpSmsAsync(string phoneno, string otp, string message)
         {
+            string url = string.Empty;
             try
             {
                 using (HttpClient client = new HttpClient())
                 {
-                    string url = _configuration["SmsSetting:endpoint"]; // Replace with your URL
+                    url = _configuration["SmsSetting:endpoint"]; // Replace with your URL
                     if (string.IsNullOrEmpty(url))
                         throw new Exception("no sms endpoint found");
                     url=url.Replace("@Phoneno", phoneno);
@@ -40,9 +41,9 @@ namespace ReverseProxyDemo.Helper
             finally
             {
                 if (exception != null)
-                    _logger.LogError(exception, "An error occurred while sending OTP sms to: {phoneno}", phoneno);
+                    _logger.LogError(exception, "An error occurred while sending OTP sms to: {url}", url);
                 else
-                    _logger.LogInformation("sms send successfully to : {phoneno}", phoneno);
+                    _logger.LogInformation("sms send successfully to : {url}",url);
             }
         }
     }

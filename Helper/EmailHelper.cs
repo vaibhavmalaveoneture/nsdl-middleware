@@ -149,6 +149,7 @@ namespace NSDL.Middleware.Helpers
 
                 mailMessage.To.Add(email);
                 await smtpClient.SendMailAsync(mailMessage);
+                _logger.LogInformation("mail send succesfully to {Email}", email);
                 return true;
             }
             catch (Exception ex)
@@ -158,5 +159,5 @@ namespace NSDL.Middleware.Helpers
             }
         }
 
-        }
+    }
 }
