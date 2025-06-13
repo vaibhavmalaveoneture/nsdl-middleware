@@ -131,7 +131,7 @@ app.MapPost("/api/auth/login", async (
         var email = dataElement.GetProperty("email").GetString();
         var otp = dataElement.GetProperty("otp").GetString();
         var message = dataElement.GetProperty("message").GetString();
-        /*var phoneno = dataElement.GetProperty("phoneno").GetString();*/
+        var phoneno = dataElement.GetProperty("phoneno").GetString();
         if (!string.IsNullOrWhiteSpace(email) &&
             !string.IsNullOrWhiteSpace(otp) &&
             !string.IsNullOrWhiteSpace(message))
@@ -142,7 +142,7 @@ app.MapPost("/api/auth/login", async (
             }
             catch { }
         }
-      /*  if (!string.IsNullOrWhiteSpace(phoneno) &&
+        if (!string.IsNullOrWhiteSpace(phoneno) &&
             !string.IsNullOrWhiteSpace(otp) &&
             !string.IsNullOrWhiteSpace(message))
         {
@@ -151,7 +151,7 @@ app.MapPost("/api/auth/login", async (
                 await smsHelper.SendOtpSmsAsync(phoneno, otp, message);
             }
             catch { }
-        }*/
+        }
         result.Data = null;
     }
 
@@ -261,7 +261,7 @@ app.MapPost("/api/auth/forgot-password/send-otp", async (
         var email = dataElement.GetProperty("email").GetString();
         var otp = dataElement.GetProperty("otp").GetString();
         var message = dataElement.GetProperty("message").GetString();
-        /*var phoneno = dataElement.GetProperty("phoneno").GetString();*/
+        var phoneno = dataElement.GetProperty("phoneno").GetString();
         if (!string.IsNullOrWhiteSpace(email) &&
             !string.IsNullOrWhiteSpace(otp) &&
             !string.IsNullOrWhiteSpace(message))
@@ -272,7 +272,7 @@ app.MapPost("/api/auth/forgot-password/send-otp", async (
             }
             catch { }
         }
-       /* if (!string.IsNullOrWhiteSpace(phoneno) &&
+        if (!string.IsNullOrWhiteSpace(phoneno) &&
             !string.IsNullOrWhiteSpace(otp) &&
             !string.IsNullOrWhiteSpace(message))
         {
@@ -281,7 +281,7 @@ app.MapPost("/api/auth/forgot-password/send-otp", async (
                 await smsHelper.SendOtpSmsAsync(phoneno, otp, message);
             }
             catch { }
-        }*/
+        }
         result.Data = null;
     }
 
@@ -323,7 +323,7 @@ app.MapPost("/api/auth/resend-otp", async (
         var email = dataElement.GetProperty("email").GetString();
         var otp = dataElement.GetProperty("otp").GetString();
         var message = dataElement.GetProperty("message").GetString();
-        /*var phoneno = dataElement.GetProperty("phoneno").GetString();*/
+        var phoneno = dataElement.GetProperty("phoneno").GetString();
         if (!string.IsNullOrWhiteSpace(email) &&
             !string.IsNullOrWhiteSpace(otp) &&
             !string.IsNullOrWhiteSpace(message))
@@ -334,7 +334,7 @@ app.MapPost("/api/auth/resend-otp", async (
             }
             catch { }
         }
-       /* if(!string.IsNullOrWhiteSpace(phoneno) &&
+        if (!string.IsNullOrWhiteSpace(phoneno) &&
             !string.IsNullOrWhiteSpace(otp) &&
             !string.IsNullOrWhiteSpace(message))
         {
@@ -343,7 +343,7 @@ app.MapPost("/api/auth/resend-otp", async (
                 await smsHelper.SendOtpSmsAsync(phoneno, otp, message);
             }
             catch { }
-        }*/
+        }
         result.Data = null;
     }
 
