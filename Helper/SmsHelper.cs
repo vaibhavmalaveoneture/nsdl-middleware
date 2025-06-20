@@ -6,10 +6,10 @@ namespace ReverseProxyDemo.Helper
 {
     public class SmsHelper:ISmsHelper
     {
-        private readonly ILogger<EmailHelper> _logger;
+        private readonly ILogger<SmsHelper> _logger;
         private readonly IConfiguration _configuration;
         private Exception exception;
-        public SmsHelper(ILogger<EmailHelper> logger, IConfiguration configuration)
+        public SmsHelper(ILogger<SmsHelper> logger, IConfiguration configuration)
         {
             _logger = logger;
             _configuration = configuration;

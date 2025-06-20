@@ -3,6 +3,7 @@ using NSDL.Middleware.Interfaces;
 using NSDL.Middleware.Models;
 using ReverseProxyDemo.Helper;
 using ReverseProxyDemo.Interfaces;
+using ReverseProxyDemo.Models;
 using Serilog;
 using System.Text;
 using System.Text.Json;
@@ -34,6 +35,7 @@ builder.Services.AddCors(options =>
 
 builder.Services.AddScoped<IEmailHelper, EmailHelper>();
 builder.Services.AddScoped<ISmsHelper, SmsHelper>();
+builder.Services.AddScoped<IFileHelper,FileHelper>();
 
 var backendBaseUrl = builder.Configuration["ReverseProxy:Clusters:backend:Destinations:backend1:Address"]
     ?? throw new InvalidOperationException("Backend base URL is not configured.");
@@ -350,7 +352,89 @@ app.MapPost("/api/auth/resend-otp", async (
     return Results.Ok(result);
 });
 
-// Map your endpoints here (only sample shown)
+
+#region createFile in middleware
+app.MapPost("/api/fvciapplication/UploadFileAsync", async (
+    HttpContext context,
+    IHttpClientFactory httpClientFactory,
+    IFileHelper fileHelper,
+    ILoggerFactory loggerFactory) =>
+{
+    var logger = loggerFactory.CreateLogger("fvciapplication/UploadFileAsync");
+
+    var httpClient = httpClientFactory.CreateClient("backend");
+
+    var form = await context.Request.ReadFormAsync();
+
+    if (form == null)
+        throw new ArgumentException("File is missing");
+
+    var multipartContent = new MultipartFormDataContent();
+
+    // Add file(s)
+    foreach (var file in form.Files)
+    {
+        var fileContent = new StreamContent(file.OpenReadStream());
+        fileContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue(file.ContentType);
+        multipartContent.Add(fileContent, file.Name, file.FileName);
+    }
+
+    // Add other form fields
+    foreach (var field in form)
+    {
+        multipartContent.Add(new StringContent(field.Value), field.Key);
+    }
+
+    var requestMessage = new HttpRequestMessage(HttpMethod.Post, "api/fvciapplication/UploadFileAsync")
+    {
+        Content = multipartContent
+    };
+
+    // Forward Authorization header if present
+    if (context.Request.Headers.TryGetValue("Authorization", out var authHeader))
+    {
+        requestMessage.Headers.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", authHeader.ToString().Split(" ").Last());
+    }
+
+    var backendResponse = await httpClient.SendAsync(requestMessage);
+
+    if (!backendResponse.IsSuccessStatusCode)
+    {
+        var backendContent = await backendResponse.Content.ReadAsStringAsync();
+        return Results.Content(
+         backendContent,
+         contentType: backendResponse.Content.Headers.ContentType?.ToString() ?? "application/json",
+         statusCode: (int)backendResponse.StatusCode
+     );
+    }
+
+    var json = await backendResponse.Content.ReadAsStringAsync();
+    var result = JsonSerializer.Deserialize<MiddlewareResponse>(json, new JsonSerializerOptions
+    {
+        PropertyNameCaseInsensitive = true
+    });
+
+    if (result?.Data is JsonElement dataElement && dataElement.ValueKind == JsonValueKind.String)
+    {
+        var message = result.Message;
+        if(message== "File Uploaded Successfully")
+        {
+            // Get the string value
+            var jsonString = dataElement.GetString();
+
+            // First, deserialize to a list/array
+            List<FvciKycDocument> fvciDocuments = JsonSerializer.Deserialize<List<FvciKycDocument>>(jsonString);
+            if (fvciDocuments != null && fvciDocuments.Count > 0)
+            {
+                fvciDocuments[0].file = form?.Files?.FirstOrDefault()?? throw new Exception("File Missing");
+                await fileHelper.createFile(fvciDocuments[0]);
+            }
+        }
+    }
+
+    return Results.Ok(result);
+});
+#endregion
 app.MapReverseProxy();
 
 app.Run();
