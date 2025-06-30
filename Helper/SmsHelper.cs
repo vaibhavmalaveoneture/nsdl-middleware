@@ -17,6 +17,8 @@ namespace ReverseProxyDemo.Helper
 
         public async Task<bool> SendOtpSmsAsync(string phoneno, string otp, string message)
         {
+            if (string.Equals(message, "REGISTRATION", StringComparison.OrdinalIgnoreCase))
+                return true;
             string url = string.Empty, ProxyAddress = string.Empty, UseProxy = string.Empty, ProxyUserName=string.Empty, ProxyPassword = string.Empty, ProxyDomain=string.Empty;
             try
             {
