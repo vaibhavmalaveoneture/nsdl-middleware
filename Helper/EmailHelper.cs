@@ -1,5 +1,6 @@
 using System.Net;
 using System.Net.Mail;
+using System.Net.Mime;
 using System.Text;
 using NSDL.Middleware.Interfaces;
 
@@ -159,5 +160,78 @@ namespace NSDL.Middleware.Helpers
             }
         }
 
+        public async Task<bool> SendEncryptedPdfEmailAsync(string base64Data,string email,string purpose)
+        {
+            try {
+                bool useGupShup = Convert.ToBoolean(_configuration["EmailSettingsGupShup:UseGupShup"]);
+                var fromEmail = _configuration[useGupShup ? "EmailSettingsGupShup:FromEmail" : "EmailSettings:FromEmail"];
+                var fromPassword = _configuration["EmailSettings:FromEmailPassword"];
+                var smtpServer = _configuration[useGupShup ? "EmailSettingsGupShup:HostName" : "EmailSettings:SmtpServer"];
+                var smtpPort = int.Parse(_configuration["EmailSettings:SmtpPort"]!);
+                var mailUserID = useGupShup ? _configuration["EmailSettingsGupShup:MailUserID"] : fromEmail;
+                var mailPass = useGupShup ? _configuration["EmailSettingsGupShup:MailPass"] : fromPassword;
+
+                var smtpClient = new SmtpClient(smtpServer)
+                {
+                    Port = smtpPort,
+                    Credentials = new NetworkCredential(mailUserID, mailPass),
+                    EnableSsl = false,
+                    UseDefaultCredentials = false,
+                };
+                string emailBody =
+                       @"
+                <html>
+                <head>
+                    <style>
+                        body { font-family: Arial, sans-serif; background-color: #f2f2f2; margin: 0; padding: 0; }
+                        .container { max-width: 600px; margin: 40px auto; background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+                        .header { font-size: 20px; font-weight: bold; margin-bottom: 15px; }
+                        .content { font-size: 14px; line-height: 1.6; }
+                        .footer { margin-top: 20px; font-size: 12px; color: #777; }
+                    </style>
+                </head>
+                <body>
+                    <div class='container'>
+                        <div class='header'>Password Reset Request on FPI Monitor</div>
+                        <div class='content'>
+                            <p>Dear Sir / Madam,</p>
+                            <p>This has reference to your password reset request on FPI Monitor Portal. In this regard, please find enclosed a 'PDF' file containing your new password. The code for opening the 'PDF' file will be the first 4 letters of your organization name in lower case followed by the first 4 letters of your name in lower case. The code is case sensitive.</p>
+                            <p>For example,<br/>
+                               If the name of your organization is <strong>Soma Stock Exchange</strong> and your name is <strong>Steffy Graph</strong>, then your code will be <strong>somastef</strong>.<br/>
+                               If the name of your organization is <strong>Indian Securities Depository Limited</strong> and your name is <strong>Om Prakash</strong>, then your code will be <strong>indiompr</strong>.<br/>
+                               If the name of your organization is <strong>IN & FS Securities Services Limited</strong> and your name is <strong>Om</strong>, then your code will be <strong>in&fom--</strong>.<br/>
+                               If the name of your organization is <strong>PQ</strong> and your name is <strong>Om</strong>, then your code will be <strong>pq--om--</strong>.
+                            </p>
+                            <p>In case you need any clarification or assistance, please feel free to contact us on 2499 4785 / 2499 4877 or email us at <a href='mailto:shivkumarj@nsdl.com'>shivkumarj@nsdl.com</a> / <a href='mailto:somac@nsdl.com'>somac@nsdl.com</a>.</p>
+                            <p>Regards,<br/>FPI Monitor</p>
+                            <p style='font-style: italic;'>This is an auto-generated email. Please do not reply to this email.</p>
+                        </div>
+                        <div class='footer'>NSDL FPI Portal</div>
+                    </div>
+                </body>
+                </html>";
+
+                byte[] pdfBytes = Convert.FromBase64String(base64Data);
+                var attachment = new Attachment(new MemoryStream(pdfBytes), "ResetPassword.pdf", MediaTypeNames.Application.Pdf);
+                string subject = "Password Reset Request on FPI Monitor";
+                var mailMessage = new MailMessage
+                {
+                    From = new MailAddress(fromEmail!),
+                    Subject = subject,
+                    Body = emailBody,
+                    IsBodyHtml = true,
+                };
+                mailMessage.Attachments.Add(attachment);
+                mailMessage.To.Add(email);
+                await smtpClient.SendMailAsync(mailMessage);
+                _logger.LogInformation("mail send succesfully to {Email}", email);
+                return true;
+            }
+            catch(Exception ex)
+            {
+                _logger.LogError(ex, "An error occurred while sending reset pdf email to: {Email}", email);
+                return false;
+            }
+        }
     }
 }
