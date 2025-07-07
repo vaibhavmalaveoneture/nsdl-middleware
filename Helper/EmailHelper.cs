@@ -163,6 +163,8 @@ namespace NSDL.Middleware.Helpers
         public async Task<bool> SendEncryptedPdfEmailAsync(string base64Data,string email,string purpose)
         {
             try {
+                if (base64Data == "")
+                    return true;
                 bool useGupShup = Convert.ToBoolean(_configuration["EmailSettingsGupShup:UseGupShup"]);
                 var fromEmail = _configuration[useGupShup ? "EmailSettingsGupShup:FromEmail" : "EmailSettings:FromEmail"];
                 var fromPassword = _configuration["EmailSettings:FromEmailPassword"];
