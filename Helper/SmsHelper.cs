@@ -1,6 +1,7 @@
 ﻿using NSDL.Middleware.Helpers;
 using ReverseProxyDemo.Interfaces;
 using System.Net;
+using System.Net.Mail;
 
 namespace ReverseProxyDemo.Helper
 {
@@ -47,9 +48,15 @@ namespace ReverseProxyDemo.Helper
                 }
                 using (HttpClient client = new HttpClient(handler))
                 {
+                    _logger.LogInformation("sms send successfully to : {url} at {timestamp}", url, DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss"));
                     HttpResponseMessage response = await client.GetAsync(url);
                     response.EnsureSuccessStatusCode(); // Throws exception for 4xx/5xx
                     string responseBody = await response.Content.ReadAsStringAsync();
+                    _logger.LogInformation("sms sent successfully at {Timestamp} to request: {ToAddress} response:  {response}",
+                          DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss"),
+                          url,
+                          responseBody
+                      );
                     return true;
                 }
             }

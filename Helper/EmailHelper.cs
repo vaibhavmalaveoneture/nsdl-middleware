@@ -149,8 +149,14 @@ namespace NSDL.Middleware.Helpers
                 };
 
                 mailMessage.To.Add(email);
+                _logger.LogInformation("Email trigger to : {email} at {timestamp}", email, DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss"));
                 await smtpClient.SendMailAsync(mailMessage);
-                _logger.LogInformation("mail send succesfully to {Email}", email);
+                _logger.LogInformation("Email sent successfully at {Timestamp} to {ToAddress}. Subject: {Subject}, AttachmentCount: {AttachmentCount}",
+                   DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss"),
+                   string.Join(", ", mailMessage.To.Select(x => x.Address)),
+                   mailMessage.Subject,
+                   mailMessage.Attachments.Count
+               );
                 return true;
             }
             catch (Exception ex)
@@ -225,8 +231,14 @@ namespace NSDL.Middleware.Helpers
                 };
                 mailMessage.Attachments.Add(attachment);
                 mailMessage.To.Add(email);
+                _logger.LogInformation("Email trigger to : {email} at {timestamp}",email, DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss"));
                 await smtpClient.SendMailAsync(mailMessage);
-                _logger.LogInformation("mail send succesfully to {Email}", email);
+                _logger.LogInformation("Email sent successfully at {Timestamp} to {ToAddress}. Subject: {Subject}, AttachmentCount: {AttachmentCount}",
+                    DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss"),
+                    string.Join(", ", mailMessage.To.Select(x => x.Address)),
+                    mailMessage.Subject,
+                    mailMessage.Attachments.Count
+                );
                 return true;
             }
             catch(Exception ex)
