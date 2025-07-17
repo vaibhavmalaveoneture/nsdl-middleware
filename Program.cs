@@ -3,7 +3,12 @@ using NSDL.Middleware.Interfaces;
 using NSDL.Middleware.Models;
 using ReverseProxyDemo.Helper;
 using ReverseProxyDemo.Interfaces;
+using ReverseProxyDemo.Models;
 using Serilog;
+using System.Buffers.Text;
+using System.IO;
+using System.Net.Mime;
+using System.Reflection.Metadata;
 using System.Text;
 using System.Text.Json;
 
@@ -34,6 +39,7 @@ builder.Services.AddCors(options =>
 
 builder.Services.AddScoped<IEmailHelper, EmailHelper>();
 builder.Services.AddScoped<ISmsHelper, SmsHelper>();
+builder.Services.AddScoped<IFileHelper, FileHelper>();
 
 var backendBaseUrl = builder.Configuration["ReverseProxy:Clusters:backend:Destinations:backend1:Address"]
     ?? throw new InvalidOperationException("Backend base URL is not configured.");
@@ -400,6 +406,221 @@ app.MapPost("/api/auth/resend-otp", async (
 
     return Results.Ok(result);
 });
+
+
+
+#region createFile in middleware
+app.MapPost("/api/fvciapplication/UploadFileAsync", async (
+    HttpContext context,
+    IHttpClientFactory httpClientFactory,
+    IFileHelper fileHelper,
+    ILoggerFactory loggerFactory) =>
+{
+    var logger = loggerFactory.CreateLogger("fvciapplication/UploadFileAsync");
+
+    var httpClient = httpClientFactory.CreateClient("backend");
+
+    var form = await context.Request.ReadFormAsync();
+
+    if (form == null)
+        throw new ArgumentException("File is missing");
+
+    var uploadRequest = fileHelper.ToUploadFileRequest(form);
+
+
+    var multipartContent = new MultipartFormDataContent();
+
+    // Add file(s)
+    foreach (var file in form.Files)
+    {
+        var fileContent = new StreamContent(file.OpenReadStream());
+        fileContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue(file.ContentType);
+        multipartContent.Add(fileContent, file.Name, file.FileName);
+    }
+
+    // Add other form fields
+    foreach (var field in form)
+    {
+        multipartContent.Add(new StringContent(field.Value), field.Key);
+    }
+
+    var requestMessage = new HttpRequestMessage(HttpMethod.Post, "api/fvciapplication/UploadFileAsync")
+    {
+        Content = multipartContent
+    };
+
+    // Forward Authorization header if present
+    if (context.Request.Headers.TryGetValue("Authorization", out var authHeader))
+    {
+        requestMessage.Headers.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", authHeader.ToString().Split(" ").Last());
+    }
+
+    var backendResponse = await httpClient.SendAsync(requestMessage);
+
+    if (!backendResponse.IsSuccessStatusCode)
+    {
+        var backendContent = await backendResponse.Content.ReadAsStringAsync();
+        return Results.Content(
+         backendContent,
+         contentType: backendResponse.Content.Headers.ContentType?.ToString() ?? "application/json",
+         statusCode: (int)backendResponse.StatusCode
+     );
+    }
+
+    var json = await backendResponse.Content.ReadAsStringAsync();
+    var result = JsonSerializer.Deserialize<MiddlewareResponse>(json, new JsonSerializerOptions
+    {
+        PropertyNameCaseInsensitive = true
+    });
+
+    if (result?.Data is JsonElement dataElement && dataElement.ValueKind == JsonValueKind.String)
+    {
+        var message = result.Message;
+        if (message == "File Uploaded Successfully")
+        {
+            // Get the string value
+            var jsonString = dataElement.GetString();
+
+            // First, deserialize to a list/array
+            List<FvciKycDocument> fvciDocuments = JsonSerializer.Deserialize<List<FvciKycDocument>>(jsonString);
+            if (fvciDocuments != null && fvciDocuments.Count > 0)
+            {
+                fvciDocuments[0].file = uploadRequest.file ?? throw new Exception("File Missing");
+                fvciDocuments[0].FvciApplicationId=uploadRequest.applicationId;
+                fvciDocuments[0].DocumentIdentifier=uploadRequest.documentIdentifier;
+                fvciDocuments[0].DocumentType=uploadRequest.docType;
+                await fileHelper.createFile(fvciDocuments[0]);
+            }
+            result.Data = Convert.ToBase64String(Encoding.UTF8.GetBytes(result?.Data?.ToString() ?? ""));
+        }
+    }
+
+    return Results.Ok(result);
+});
+#endregion
+
+#region deleteFile in middleware
+app.MapPost("/api/fvciapplication/DeleteFileAsync", async (
+    HttpContext context,
+    IHttpClientFactory httpClientFactory,
+    IFileHelper fileHelper,
+    ILoggerFactory loggerFactory) =>
+{
+    var logger = loggerFactory.CreateLogger("fvciapplication/DeleteFileAsync");
+
+    var httpClient = httpClientFactory.CreateClient("backend");
+
+    var requestBody = await new StreamReader(context.Request.Body).ReadToEndAsync();
+
+    var content = new StringContent(Encoding.UTF8.GetString(Convert.FromBase64String(requestBody??string.Empty)), Encoding.UTF8, "application/json");
+
+    var requestMessage = new HttpRequestMessage(HttpMethod.Post, "api/fvciapplication/DeleteFileAsync")
+    {
+        Content = content
+    };
+
+    // Forward Authorization header if present
+    if (context.Request.Headers.TryGetValue("Authorization", out var authHeader))
+    {
+        requestMessage.Headers.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", authHeader.ToString().Split(" ").Last());
+    }
+
+    var backendResponse = await httpClient.SendAsync(requestMessage);
+
+    if (!backendResponse.IsSuccessStatusCode)
+    {
+        var backendContent = await backendResponse.Content.ReadAsStringAsync();
+        return Results.Content(
+         backendContent,
+         contentType: backendResponse.Content.Headers.ContentType?.ToString() ?? "application/json",
+         statusCode: (int)backendResponse.StatusCode
+     );
+    }
+
+    var json = await backendResponse.Content.ReadAsStringAsync();
+    var result = JsonSerializer.Deserialize<MiddlewareResponse>(json, new JsonSerializerOptions
+    {
+        PropertyNameCaseInsensitive = true
+    });
+
+    if(result?.Message== "Document deleted successfully.")
+    {
+        var decodeBase64 = Encoding.UTF8.GetString(Convert.FromBase64String(requestBody));
+        var deleteFileRequest = JsonSerializer.Deserialize<DeleteFileRequest>(decodeBase64, new JsonSerializerOptions
+        {
+            PropertyNameCaseInsensitive = true
+        });
+        if (deleteFileRequest == null)
+            Results.Content(
+                "Deserialization failed.",
+                contentType: backendResponse.Content.Headers.ContentType?.ToString() ?? "application/json",
+                statusCode: 400
+            );
+        await fileHelper.deleteFile(deleteFileRequest);
+    }
+    
+
+    return Results.Ok(result);
+});
+#endregion
+
+
+#region DownloadFile in middleware
+app.MapGet("/api/fvciapplication/DownloadFileAsync", async (
+    HttpContext context,
+    IHttpClientFactory httpClientFactory,
+    IFileHelper fileHelper,
+    ILoggerFactory loggerFactory) =>
+{
+    var logger = loggerFactory.CreateLogger("fvciapplication/DownloadFileAsync");
+
+    var httpClient = httpClientFactory.CreateClient("backend");
+
+    var requestBody = context.Request.Query["request"]; // base64 string
+
+    var decodedJson = Encoding.UTF8.GetString(Convert.FromBase64String(requestBody));
+
+    var deleteFileRequest = JsonSerializer.Deserialize<DeleteFileRequest>(decodedJson, new JsonSerializerOptions
+    {
+        PropertyNameCaseInsensitive = true
+    });
+    //var content = new StringContent(decodedJson, Encoding.UTF8, "application/json");
+
+    // FIXED
+    var requestMessage = new HttpRequestMessage(HttpMethod.Get,
+        $"api/fvciapplication/DownloadFileAsync?docType={deleteFileRequest?.docType}&FilePath={deleteFileRequest?.FilePath}&ApplicationId={deleteFileRequest?.ApplicationId}");
+
+
+    // Forward Authorization header if present
+    if (context.Request.Headers.TryGetValue("Authorization", out var authHeader))
+    {
+        requestMessage.Headers.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", authHeader.ToString().Split(" ").Last());
+    }
+
+    var backendResponse = await httpClient.SendAsync(requestMessage);
+
+    if (!backendResponse.IsSuccessStatusCode)
+    {
+        var backendContent = await backendResponse.Content.ReadAsStringAsync();
+        return Results.Content(
+         backendContent,
+         contentType: backendResponse.Content.Headers.ContentType?.ToString() ?? "application/json",
+         statusCode: (int)backendResponse.StatusCode
+     );
+    }
+    var json = await backendResponse.Content.ReadAsStringAsync();
+    var result = JsonSerializer.Deserialize<MiddlewareResponse>(json, new JsonSerializerOptions
+    {
+        PropertyNameCaseInsensitive = true
+    });
+    if(result?.Message== "File Validation Successfully")
+    {
+        // Return file result
+        return await fileHelper.viewFile(deleteFileRequest!);
+    }
+    return Results.Json(result);
+});
+#endregion
 
 // Map your endpoints here (only sample shown)
 app.MapReverseProxy();
