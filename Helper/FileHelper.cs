@@ -22,7 +22,7 @@ namespace ReverseProxyDemo.Helper
             try
             {
                 var categoryFolder = fvciKycDocument.DocumentType.ToLowerInvariant();
-                var uploadsFolder = Path.Combine(_configuration["DocumentPath"] ?? string.Empty, fvciKycDocument.FvciApplicationId, categoryFolder);
+                var uploadsFolder = Path.Combine(_configuration["DocumentPathNew"] ?? string.Empty, fvciKycDocument.FvciApplicationId, categoryFolder);
 
                 if (!Directory.Exists(uploadsFolder))
                 {
@@ -48,7 +48,7 @@ namespace ReverseProxyDemo.Helper
         {
             try
             {
-                deleteFileRequest.FilePath = Path.Combine(_configuration["DocumentPath"] ?? string.Empty, deleteFileRequest.ApplicationId, deleteFileRequest.docType, deleteFileRequest.FilePath);
+                deleteFileRequest.FilePath = Path.Combine(_configuration["DocumentPathNew"] ?? string.Empty, deleteFileRequest.ApplicationId, deleteFileRequest.docType, deleteFileRequest.FilePath);
                 if (System.IO.File.Exists(deleteFileRequest.FilePath))
                 {
                     System.IO.File.Delete(deleteFileRequest.FilePath);
@@ -65,7 +65,7 @@ namespace ReverseProxyDemo.Helper
         public async Task<IResult> viewFile(DeleteFileRequest downloadFileRequest)
         {
             var fullPath = Path.Combine(
-                _configuration["DocumentPath"] ?? string.Empty,
+                _configuration["DocumentPathNew"] ?? string.Empty,
                 downloadFileRequest.ApplicationId,
                 downloadFileRequest.docType,
                 downloadFileRequest.FilePath
